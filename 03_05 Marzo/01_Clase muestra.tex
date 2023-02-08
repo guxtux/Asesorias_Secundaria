@@ -1,0 +1,79 @@
+\input{preambulo_presentacion_Berlin_beaver}
+\makeatletter
+% \setbeamercolor{section in foot}{bg=gray!30, fg=black!90!orange}
+% \setbeamercolor{subsection in foot}{bg=blue!30!yellow, fg=red}
+% \setbeamercolor{date in foot}{bg=black, fg=white}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
+    \usebeamerfont{section in foot} \insertsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in foot}%
+    \usebeamerfont{subsection in foot}  \insertsubsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot} \insertshortdate{} \hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\setbeamertemplate{navigation symbols}{}
+\date{5 de marzo de 2021}
+\title{Clase muestra}
+\subtitle{Asesoría}
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+\spanishdecimal{.}
+\section*{Contenido}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideallsubsections]}
+\section{Temas}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideothersubsections]}
+
+\subsection{Habilidad matemática}
+\begin{frame}
+\frametitle{Habilidades}
+En este apartado se busca que el estudiante desarrolle  distintas habilidades:
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item Razonamiento.
+\item Abstracción.
+\item Lógica.
+\item Solución de problemas.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Combinación de habilidades}
+Al plantear un problema, se espara que el estudiante ocupe sus habilidades más el conocimiento matemático para resolver el ejercicio.
+\\
+\bigskip
+\pause
+Debido apoyarse tanto con la artimética y el álgebra.
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+¿Qué número sigue en esta sucesión numérica?
+\begin{align*}
+4, 8, 16, 20, \ldots
+\end{align*}
+
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}
+\item $18$
+\item $24$
+\item $16$
+\item $20$
+\item $28$
+\end{enumerate}
+\end{frame}
+\subsection{Matemáticas}
+
+\subsection{Estadística}
+
+\subsection{Física}
+\end{document}

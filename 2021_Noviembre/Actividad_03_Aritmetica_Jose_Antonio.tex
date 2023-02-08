@@ -1,0 +1,69 @@
+\input{preambulo_materiales}
+
+\title{Ejercicios de repaso - José Antonio \vspace{-2cm}}
+\author{}
+\date{ }
+
+%--------------------------------------------------------------------
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice})}
+%\newcommand\choicelabel{\thechoice.}
+\newcommand\choicelabel{\thechoice}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+\newenvironment{oneparchoices}%
+  {%
+    \setcounter{choice}{0}%
+    \def\choice{%
+      \refstepcounter{choice}%
+      \ifnum\value{choice}>1\relax
+        \penalty -50\hskip 1em plus 1em\relax
+      \fi
+      \choicelabel
+      \nobreak\enskip
+    }% choice
+    % If we're continuing the paragraph containing the question,
+    % then leave a bit of space before the first choice:
+    \ifvmode\else\enskip\fi
+    \ignorespaces
+  }%
+  {}
+%----------------------------------------------------------
+
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+
+Resuelve los siguientes enunciados:
+\begin{enumerate}[label=\alph*)]
+\item Si $14$ libros cuestan $\$ 84$, ¿cuánto costarían $9$ libros? \textbf{R.} \rule{2cm}{0.1mm}
+\item Si $25$ trajes cuestan $\$ 250$, ¿cuánto costarían $63$ trajes? \textbf{R.} \rule{2cm}{0.1mm}
+\item Si $19$ sombreros cuestan $\$ 57$, ¿cuántos sombreros podría comprar con $\$ 108$? \textbf{R.} \rule{2cm}{0.1mm}
+\item Se reparten $84$ kilogramos de víveres entre $3$ familias compuestas de $7$ personas cada una. ¿Cuántos kilogramos recibe cada persona? 
+\\
+\textbf{R.} \rule{2cm}{0.1mm}
+\item Un estanque cuya capacidad es de $300$ litros está vacío y cerrada su descarga. Si abrimos al mismo tiempo tres llaves que vierten: la primera, $36$ litros en $3$ minutos, la segunda $48$ litros en $6$ minutos y la tercera, $15$ litros en $3$ minutos, ¿en cuánto tiempo se llenará el estanque? \\
+ \textbf{R.} \rule{2cm}{0.1mm}
+ \item Un comerciante compró $30$ trajes a $\$ 2000$ cada uno. Vendió $20$ trajes a $\$ 1800$ cada uno. ¿En cuánto tiene que vender los restantes trajes para no perder en su inversión? \textbf{R.} \rule{2cm}{0.1mm}
+ \item $50 - (6.31 + 14) = $ \textbf{R.} \rule{2cm}{0.1mm}
+ \item $134 \times 0.873 =$ \textbf{R.} \rule{2cm}{0.1mm}
+ \item $(0.5 + 0.76) \times 5 =$ \textbf{R.} \rule{2cm}{0.1mm}
+ \item $0.243 \divisionsymbol 0.081 =$ \textbf{R.} \rule{2cm}{0.1mm}
+ \item $17 \divisionsymbol 0.143 =$ \textbf{R.} \rule{2cm}{0.1mm}
+ \item $0.64 \divisionsymbol 16 =$ \textbf{R.} \rule{2cm}{0.1mm}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,87 @@
+\input{preambulo_materiales}
+
+\title{Ejercicios de repaso - José Antonio \vspace{-2cm}}
+\author{}
+\date{ }
+
+%--------------------------------------------------------------------
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice})}
+%\newcommand\choicelabel{\thechoice.}
+\newcommand\choicelabel{\thechoice}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+\newenvironment{oneparchoices}%
+  {%
+    \setcounter{choice}{0}%
+    \def\choice{%
+      \refstepcounter{choice}%
+      \ifnum\value{choice}>1\relax
+        \penalty -50\hskip 1em plus 1em\relax
+      \fi
+      \choicelabel
+      \nobreak\enskip
+    }% choice
+    % If we're continuing the paragraph containing the question,
+    % then leave a bit of space before the first choice:
+    \ifvmode\else\enskip\fi
+    \ignorespaces
+  }%
+  {}
+%----------------------------------------------------------
+
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+
+Escribe en notación decimal:
+\begin{enumerate}[label=\alph*)]
+\item $115$ diezmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $318$ cienmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $133346$ cienmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $7$ unidades con $19$ milésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $9$ unidades con $9$ diezmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $6$ unidades con $16$ cienmilésimas. c
+\end{enumerate}
+
+Lee en voz alta las siguientes cantidades:
+\begin{enumerate}[label=\alph*)]
+\item $0.8$
+\item $0.15$
+\item $0.09$
+\item $0.0015$
+\item $1.015$
+\item $1.15678$
+\item $2.000016$
+\end{enumerate}
+
+\newpage
+
+Ejercicios de tarea.
+\\
+\\
+Cuando se tienen operaciones sin paréntesis, primero se resuelven las divisiones, luego las multiplicaciones y al final las sumas y restas, conforme se presenten de izquierda a derecha.
+\\
+\\
+Resuelve:
+\begin{enumerate}
+\item $8 + 6 \divisionsymbol 3 =$ \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $15 \divisionsymbol 5 - 2 =$ \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $12 \divisionsymbol 4 \times 3 + 5 =$ \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $14 \divisionsymbol 3 \times 4 \divisionsymbol 2 \times 6 =$ \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $15 + 6 \divisionsymbol 3 - 4 \divisionsymbol 2 + 4 =$ \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\end{enumerate}
+\end{document}

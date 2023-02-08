@@ -1,0 +1,80 @@
+\input{preambulo_materiales}
+
+\title{Ejercicios de repaso - José Antonio \vspace{-2cm}}
+\author{}
+\date{ }
+
+%--------------------------------------------------------------------
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice})}
+%\newcommand\choicelabel{\thechoice.}
+\newcommand\choicelabel{\thechoice}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+\newenvironment{oneparchoices}%
+  {%
+    \setcounter{choice}{0}%
+    \def\choice{%
+      \refstepcounter{choice}%
+      \ifnum\value{choice}>1\relax
+        \penalty -50\hskip 1em plus 1em\relax
+      \fi
+      \choicelabel
+      \nobreak\enskip
+    }% choice
+    % If we're continuing the paragraph containing the question,
+    % then leave a bit of space before the first choice:
+    \ifvmode\else\enskip\fi
+    \ignorespaces
+  }%
+  {}
+%----------------------------------------------------------
+
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+
+Efectúa las siguientes operaciones:
+
+\begin{enumerate}[label=\alph*)]
+\item $0.3 +0.8 +3.15 = $
+\item $0.19 + 3.81+ 0.723+ 0.131 = $
+\item $0.39 - 0.184 = $
+\item $0.76 + 31.893 - 14 = $
+\item $0.17 \times 0.83 = $
+\item $56 \divisionsymbol 0.114 =$
+\item $56.03 \divisionsymbol 19 =$
+\end{enumerate}
+
+\newpage
+
+Ejercicios de tarea.
+
+\begin{enumerate}
+\item $8 \divisionsymbol 0.512 =$
+\item $12 \divisionsymbol 0.003 =$
+\item $17 \divisionsymbol 0.143 =$
+\item $14 \times 0.08 =$
+\item $16.84 \times 14.35 =$
+\item $(0.5 + 0.76) \times 5 =$
+\item $(8.35 + 6.003 + 0.01) \times 0.7 =$
+\item $(0.75 - 0.3) \times 5 =$
+\item Pedro tiene $\$ 5.64$, Juan $\$2.37$ más que Pedro y Enrique $\$1.15$ más que Juan. ¿Cuánto tienen entre los tres? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item Inicié la semana el lunes con $\$ 14.25$, el martes cobré $\$ 16.89$, el miércoles cobré $\$ 97$ y el jueves pagué $\$ 56.07$. ¿Cuánto me queda?
+\\
+\hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\end{enumerate}
+\end{document}

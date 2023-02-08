@@ -1,0 +1,47 @@
+\input{preambulo_materiales}
+
+\title{Los números primos \\ {\Large La criba de Eratóstenes}\vspace{-3ex}}
+\author{}
+\date{ }
+
+
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+
+\textbf{Definición:} Un número primo es aquel que solo es divisible entre sí mismo y el $1$.
+\par
+La criba de Eratóstenes nos permite identificar los números primos que hay entre $1$ y $100$, para ello sigamos el siguiente método:
+\begin{enumerate}
+\item Comienza marcado todos aquellos números que sean múltiplos de $2$.
+\item Luego marca todos aquellos números que sean múltiplos de $3$.
+\item Como ya marcaste los números que son múltiplos de $2$, por lo tanto, ya se marcaron los que son múltiplos de $4$, así que marca los números que son múltiplos de $5$.
+\item Continua marcando los números que son múltiplos de los que vayas encontrando.
+\item Al final tendremos una lista de los números primos que hay entre $1$ y $100$.
+\end{enumerate}
+
+\newpage
+
+\begin{table}
+\centering
+\Large
+\begin{tabular}{| c  | c | c  | c | c  | c | c  | c | c  | c |}
+\hline
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\ \hline
+31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\ \hline
+41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\ \hline
+51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 \\ \hline
+61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\ \hline
+71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80 \\ \hline
+81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90 \\ \hline
+91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100 \\ \hline
+\end{tabular}
+\end{table}
+\vspace*{1em}
+Anota los números que no quedaron marcados:
+\\[0.5em]
+\rule{14cm}{0.1mm}
+
+\end{document}

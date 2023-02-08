@@ -1,0 +1,182 @@
+\documentclass[14pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-lcroman]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[per-mode=symbol]{siunitx}
+\usepackage{gensymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, 
+     bottom=2.00cm]{geometry}
+
+%\renewcommand{\questionlabel}{\thequestion)}
+\decimalpoint
+\sisetup{bracket-numbers = false}
+
+\title{\vspace*{-2cm}Física\vspace{-5ex}}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Medición.}
+
+\subsection{Conceptos.}
+
+La Física es una ciencia basada en las observaciones y medidas de los fenómenos físicos.
+
+\begin{enumerate}[label=\alph*)]
+\item \textbf{Medir.} Es comparar una magnitud con otra de la misma especie llamada patrón.
+\item \textbf{Magnitud.} Es una cantidad medible de un sistema físico a la que se le pueden asignar distintos valores como resultado de una medición o una relación de medidas
+\item \textbf{Unidad.}  Es una cantidad de una determinada magnitud física, definida y adoptada por convención o por ley. Cualquier valor de una cantidad física puede expresarse como un múltiplo de la unidad de medida.
+\end{enumerate}
+
+\subsection{Tipos de Magnitudes y Unidades.}
+
+\textbf{Unidades fundamentales: } del Sistema Internacional de Unidades (SI), son magnitudes físicas básicas que pueden medirse y son independientes de todas las demás.
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c |} \hline
+Magnitud & Unidad & Símbolo \\ \hline
+Longitud & metro & m \\ \hline
+Masa & kilogramo & kg \\ \hline
+Tiempo & segundo & s \\ \hline
+Temperatura & Kelvin & K \\ \hline
+Intensidad eléctrica & Ampere & A \\ \hline
+Intensidad luminosa & candela & cd \\ \hline
+Cantidad de sustancia & mol & mol \\  \hline  
+\end{tabular}
+\end{table}
+
+\textbf{Unidades derivadas: } Son las unidades que provienen de una combinación de las unidades fundamentales.
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{| c | c | c | c |} \hline
+% Magnitud & Unidad & Símbolo & Equivalente \\ \hline 
+% Fuerza	& Newton &	N &	$\unit{\kilo\gram\metre\per\square\second}$ \\ \hline
+% Presión & Pascal & Pa & $\unit{\kilo\gram\per\metre\square\second$} \\ \hline
+% Trabajo & Joule & J & $\unit{\kilo\gram\square\metre\per\square\second}$ \\ \hline
+% Área & Metro cuadrado &	$\unit{\square\metre}$ & $\unit{\square\metre}$
+% Volumen & Metro cúbico & $\unit{\cubic\metre}$ & $\unit{\cubic\metre}$
+% Aceleración	& Metro por segundo al cuadrado	& $\unit{\metre\per\square\second}$ & $\unit{\metre\per\square\second}$ \\ \hline   
+% \end{tabular}
+% \end{table}
+
+\textbf{Magnitud Escalar.} Es la que queda definida con sólo indicar su cantidad en número y unidad de medida.
+\\
+Ejemplo: $\SI{5}{\kilo\gram},\, \SI{20}{\degreeCelsius}, \, \SI{250}{\square\metre}, \, \SI{40}{\milli\gram}$
+\\
+\textbf{Magnitud Vectorial.} Es la que además de definir cantidad en número y unidad de medida, se requiere indicar la dirección y sentido en que actúan. Se representan de manera gráfica por vectores, los cuales deben tener: magnitud, dirección y sentido.
+
+\section{Materia.}
+
+\subsection{Concepto de Materia.}
+
+Es todo cuanto existe en el universo y se halla construida por partículas elementales, mismas que
+generalmente se encuentran agrupadas en átomos y moléculas. Dichos átomos, que a su vez se dividen en: protones, electrones y neutrones.
+
+\subsection{Propiedades generales de la materia.}
+
+Son las que poseen los cuerpos, algunas son:
+\begin{enumerate}[label=\roman*)]
+\item \textbf{Masa.} Es la cantidad de materia contenida en un cuerpo y es la medida de su inercia.
+\item \textbf{Peso.} Representa la fuerza gravitacional con la que es atraída la masa de un cuerpo.
+\item \textbf{Volumen.} Es el lugar que ocupa la materia.
+\end{enumerate}
+
+\subsection{Características de la materia.}
+
+Son las propiedades que permiten distinguir unas sustancias de otras:
+\begin{enumerate}
+\item Masa. La masa de las cosas es la sumatoria de la cantidad total de materia que hay en ellas. Esto es, cuántos elementos hay contenidos en un mismo cuerpo. También se puede ver como la resistencia que opone un cuerpo al cambio de su movimiento. Se mide en kilogramos de acuerdo al Sistema Internacional de Unidades (SI).
+\item \textbf{Peso.} Es la medida en que actúa la fuerza de gravedad sobre un cuerpo u otro, medida en Newtons (N) de acuerdo al SI. Suele confundirse con la masa, pero es algo distinto.
+\item \textbf{Volumen.} Es la relación del espacio definida en tres dimensiones (largo, ancho y altura) que ocupa un cuerpo determinado, medido en metros cúbicos ($m^{3}$) según el SI.
+\item \textbf{Densidad.} Indica qué tan juntas están las partículas de un cuerpo o una sustancia, calculada como la relación entre su masa y su volumen. Se expresa, por ende, en kilogramos por metro cúbico ($kg/m^{3}$).
+\item \textbf{Temperatura.} Es la medida del calor percibida en un cuerpo determinado, ya que la energía calórica se transmite de los cuerpos más cálidos a los más fríos. Para ello se emplean distintas escalas de temperatura: la Celsius (°C), la Kelvin (°K) o la Fahrenheit (°F).
+\end{enumerate}
+
+\subsubsection{Materia sólida.}
+
+La materia sólida tiene sus partículas muy próximas y fijas en relaciones estables de atracción, que les confieren una forma definida, resistencia a la deformación e imposibilidad de fluir. Los sólidos presentan además las siguientes propiedades exclusivas:
+
+\begin{enumerate}
+\item \textbf{Dureza.} Se refiere a su resistencia a la penetración por parte de otro sólido. Los objetos duros no pueden cortarse con facilidad, como sí los blandos.
+\item \textbf{Maleabilidad.} Se refiere a los materiales que pueden ser deformados por compresión, sin romperse o dividirse en partes más chicas. Los materiales maleables son buenos para formar láminas.
+\item \textbf{Ductilidad.} Se refiere a la posibilidad de formar hilos de la materia cuando se la somete a fuerzas de tracción.
+\item \textbf{Punto de fusión.} Se refiere a la temperatura a la que un sólido deja de serlo y se vuelve líquido.
+\end{enumerate}
+
+\subsubsection{Materia líquida.}
+
+La materia líquida fluye más o menos fácilmente, ya que sus partículas se mueven rápidamente y se atraen con menor fuerza que en los sólidos, lo que les permite mantenerse juntas y tener un mismo volumen propio, pero no una forma propia determinada (sino la de su recipiente). Además, tienen las siguientes características:
+
+\begin{enumerate}
+\item \textbf{Compresibilidad.} Es la capacidad de la materia para comprimirse o no, es decir, si sus átomos pueden obligarse a estar más próximos los unos a los otros. Está presente en los líquidos y en mayor medida en los gases, pues los sólidos son incompresibles.
+\item \textbf{Viscosidad.} Dependiendo de qué tanta resistencia ofrezcan sus partículas a fluir, el líquido fluirá más o menos fácilmente. A mayor viscosidad (como el asbesto), menor fluidez.
+\item \textbf{Punto de congelación.} Es la temperatura a la cual un líquido pasa a ser un sólido debido a la disminución de energía calórica del líquido.
+\item \textbf{Punto de ebullición.} Es la temperatura a la cual un líquido pasa a ser un gas, cuando la presión de vapor del líquido se iguala a la presión que rodea al líquido.
+\end{enumerate}
+
+\subsubsection{Materia gaseosa.}
+
+Los gases son la presentación más dispersa, menos cohesionada y más volátil de la materia. No tienen forma ni volumen determinados, sino que tienden a ocupar todo el espacio disponible. Son fluidos y los afecta menos la gravedad. Tienen las siguientes propiedades:
+
+\begin{enumerate}
+\item \textbf{Compresibilidad.} Son mucho más compresibles que los líquidos.
+\item \textbf{Presión.} Ejercen fuerza sobre todo lo que los contiene, por lo que “empujan” y presionan todo a su alrededor.
+\item \textbf{Licuefacción.} Aplicando grandes cantidades de presión, puede forzarse un gas a volverse líquido.
+\item \textbf{Condensación.} Similarmente, retirando energía calórica, se puede transformar un gas en líquido.
+\end{enumerate}
+
+\subsection{Fases o estados de agregación de la materia.}
+
+En condiciones apropiadas de temperatura y presión, todas las sustancias pueden existir en tres
+fases: sólida, líquida o gaseosa.
+
+\begin{enumerate}
+\item \textbf{Fase sólida.} Cuando las moléculas se mantienen unidas en una estructura cristalina rígida, de tal modo que las sustancias tienen una forma y volumen definidos.
+\item \textbf{Fase líquida.} Al suministrar calor al sólido, su temperatura se eleva, haciendo que sus moléculas aumenten su separación y su volumen ocupa la forma del recipiente que lo contiene.
+\item \textbf{Fase gaseosa.} Al seguir aumentando la temperatura al líquido, sus moléculas se separan más, formándose un gas o vapor y su volumen ocupa totalmente el recipiente que lo contiene.
+\end{enumerate}
+
+\subsection{Cambio de fase de la materia.}
+
+Es el cambio en la separación de las moléculas de las sustancias.
+
+\begin{enumerate}
+\item \textbf{Fusión.} Es el cambio de sólido a líquido.
+\item \textbf{Ebullición.} Es el cambio de líquido a gas.
+\item \textbf{Solidificación.} Es el cambio de líquido a sólido.
+\item \textbf{Condensación.} Es el cambio de gas a líquido.
+\item \textbf{Sublimación.} Es el cambio de sólido a gas.
+\end{enumerate}
+
+\newpage
+
+\section{Cinemática.}
+
+\subsection{Conceptos.}
+
+La mecánica es la rama de la física que trata del movimiento de los cuerpos incluyendo el reposo
+como un caso particular de movimiento.
+
+\begin{enumerate}[label=\roman*)]
+\item \textbf{Cinemática.} Analiza el movimiento de los cuerpos atendiendo solo a sus características, sin considera las causas que lo producen.
+
+Al estudiar cinemática se consideran las siguientes magnitudes con sus unidades respectivas
+\item \textbf{Movimiento.} Es el cambio de posición de un cuerpo con respecto a un punto de referencia en el espacio y en tiempo.
+\item \textbf{Posición.} Es el lugar exacto donde se encuentra un cuerpo, en un sistema de referencia.
+\item \textbf{Desplazamiento.} Es el cambio de posición de una partícula en determinada dirección, por lo tanto es una cantidad vectorial.
+\item \textbf{Sistema de referencia.} Es un marco de referencia establecido, que se toma como base para poder expresar en forma correcta un movimiento o cambio de posición y el tiempo en que suceden los eventos.
+\item \textbf{Tiempo.} Es el lapso entre dos sucesos o eventos.
+\item \textbf{Trayectoria.} Es la ruta o camino a seguir por un determinado cuerpo en movimiento.
+\item Distancia. Es la separación lineal que existe entre dos lugares en cuestión, por lo que se considera una cantidad escalar.
+\item \textbf{Velocidad.} Es una magnitud vectorial, que se define como el desplazamiento realizado por un móvil, dividido entre el tiempo que tarda en efectuarlo.
+\item \textbf{Velocidad media.} Representa la relación entre el desplazamiento total hecho por un móvil y el tiempo en efectuarlo.
+\item \textbf{Aceleración.} Es una magnitud vectorial, que representa el cambio de la velocidad de un cuerpo en un tiempo determinado.
+\end{enumerate}
+\end{document}

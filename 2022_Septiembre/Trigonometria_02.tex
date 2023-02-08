@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{anyfontsize}
+\usepackage{anysize}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usetikzlibrary{arrows.meta, positioning}
+\setlength{\parskip}{1em}
+\spanishdecimal{.}
+%\renewcommand{\baselinestretch}{1.5}
+%\marginsize{1.5cm}{1.5cm}{1cm}{2cm}
+%\author{M. en C. Gustavo Contreras Mayén. \texttt{curso.fisica.comp@gmail.com}\\
+%M. en C. Abraham Lima Buendía. \texttt{abraham3081@ciencias.unam.mx}}
+\title{\vspace*{-2cm}Ángulos y triángulos\vspace{-5ex}}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Ángulos.}
+
+\begin{enumerate}
+\item \textbf{Ángulos complementarios: } Son dos ángulos que sumados valen un ángulo recto, es decir $\ang{90}$.
+\\
+Calcula los complementos de los siguientes ángulos:
+\begin{enumerate}
+\item $\ang{18}$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\ang{36;52;}$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\ang{48;39;15}$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\end{enumerate}
+\item \textbf{Ángulos suplementarios: } Son los ángulos que sumados valen dos ángulos rectos, es decir $\ang{180}$.
+\item \textbf{Suplemento de un ángulo: } Es lo que le falta al ángulo para valer dos ángulos rectos.
+\\
+Calcula los suplementos de los siguientes ángulos:
+\begin{enumerate}
+\item $\ang{78}$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\ang{92;15;}$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\ang{123;9;16}$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\end{enumerate}
+\item Considera la siguiente figura:
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+    \draw (0, 0) -- (5, 0) node [near end, pos=1.1] {$A$};
+    \draw (0, 0) -- (0, 5) node [near end, pos=1.1] {$D$};
+    \draw [rotate=20] (0, 0) -- (5, 0);
+    \draw [rotate=50] (0, 0) -- (5, 0);
+
+    \draw (1, 0) arc(0:20:1);
+    \draw (1.4, 0.5) arc(0:50:1);
+    \draw (0.8, 1) arc(40:90:1);
+
+    \node at (-0.3, -0.3) {$0$};
+    \node at (5, 1.7) {$B$};
+    \node at (3.5, 4) {$C$};
+\end{tikzpicture}
+\end{figure}
+Si el $\angle \, AOD$ es recto y se cumple que:
+\begin{align*}
+\angle \, AOB &= 2 \, x \\
+\angle \, BOC &= 3 \, x \\
+\angle \, COD &= 4 \, x
+\end{align*}
+¿Cuánto vale cada ángulo?
+\item Considera la siguiente figura:
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+    \draw [rotate=30] (-1, 0) -- (3, 0);
+    \draw [rotate=30] (2, -2) -- (0, 2);
+
+    % \draw (1, 0) arc(0:20:1);
+    % \draw (1.4, 0.5) arc(0:50:1);
+    % \draw (0.8, 1) arc(40:90:1);
+
+    \node at (3, 1.5) {$A$};
+    \node at (3, -1) {$B$};
+    \node at (-1, -1) {$C$};
+    \node at (-1.3, 1.5) {$D$};
+    \node at (0.9, 0.1) {$O$};
+
+    \node at (0.8, -0.5) {$2 \, x$};
+    \node at (1.8, 0.5) {$x$};
+\end{tikzpicture}
+\end{figure}
+Si $\angle \, BOC = 2 \, \angle \, BOA$, calcula los ángulos:
+\begin{enumerate}
+\item $\angle \, AOB$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\angle \, BOC$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\angle \, COD$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\item $\angle \, AOD$ \hspace{1cm} \rule{1.5cm}{0.7pt}
+\end{enumerate}
+\item Halla el ángulo que es igual a la mitad de su suplemento.
+\\ \textbf{R.} \rule{4cm}{0.7pt}
+\item Halla el ángulo que es igual al doble de su suplmento.
+\\ \textbf{R.} \rule{4cm}{0.7pt}
+\end{enumerate}
+
+\section{Triángulos.}
+
+\begin{enumerate}
+\item Del teorema de Pitágoras conocemos la expresión para calcular el valor de la hipotenusa $h$ en términos de los catetos $a$ y $b$:
+\begin{align*}
+h = \sqrt[2]{a^{2} + b^{2}}
+\end{align*}
+\begin{enumerate}
+\item De la expresión de Pitágoras, obtén una expresión para calcular el valor de $a$ en términos de $h$ y de $b$.
+\\[1em]
+\textbf{R.} \rule{6cm}{0.7pt}
+\item De la expresión de Pitágoras, obtén una expresión para calcular el valor de $b$ en términos de $h$ y de $a$.
+\\[1em]
+\textbf{R.} \rule{6cm}{0.7pt}
+\end{enumerate}
+\item Si $a$ es la hipotenusa y $b$, $c$ los catetos de un triángulo rectángulo, calcula el lado que falta:
+\begin{enumerate}
+\item $b = \SI{10}{\centi\meter}$, $c = \SI{6}{\centi\meter}$ \hspace{1cm} \rule{2cm}{0.7pt}
+\item $b = \SI{30}{\centi\meter}$, $c = \SI{40}{\centi\meter}$ \hspace{1cm} \rule{2cm}{0.7pt}
+\item $a = \SI{32}{\meter}$, $c = \SI{12}{\meter}$ \hspace{1cm} \rule{2cm}{0.7pt}
+\item $a = \SI{32}{\meter}$, $c = \SI{20}{\meter}$ \hspace{1cm} \rule{2cm}{0.7pt}
+\item $a = \SI{80}{\kilo\meter}$, $b = \SI{80}{\kilo\meter}$ \hspace{1cm} \rule{2cm}{0.7pt}
+\end{enumerate}
+\item En el triángulo rectángulo $\triangle \, ABC$ (donde $\angle \, A = \ang{90})$. Calcula las funciones trigonométricas de los ángulos $B$ y $C$, si $b = \SI{2}{\centi\meter}$ y $c = \SI{4}{\centi\meter}$.
+\item Dados los puntos $A \, (2, 3)$ y $B \, (-1, 4)$, calcula las funciones trigonométricas de \break \hfill $\angle \, XOA$ y $\angle \, XOB$.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\draw[style=help lines, thin] (0, 0) grid[step=1cm] (8, 8);
+	\end{tikzpicture}
+\end{figure}
+\end{enumerate}
+
+\end{document}

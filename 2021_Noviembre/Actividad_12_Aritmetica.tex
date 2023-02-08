@@ -1,0 +1,118 @@
+\input{preambulo_materiales}
+
+\title{Ejercicios de repaso \vspace{-2cm}}
+\author{}
+\date{ }
+
+%--------------------------------------------------------------------
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice})}
+%\newcommand\choicelabel{\thechoice.}
+\newcommand\choicelabel{\thechoice}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+\newenvironment{oneparchoices}%
+  {%
+    \setcounter{choice}{0}%
+    \def\choice{%
+      \refstepcounter{choice}%
+      \ifnum\value{choice}>1\relax
+        \penalty -50\hskip 1em plus 1em\relax
+      \fi
+      \choicelabel
+      \nobreak\enskip
+    }% choice
+    % If we're continuing the paragraph containing the question,
+    % then leave a bit of space before the first choice:
+    \ifvmode\else\enskip\fi
+    \ignorespaces
+  }%
+  {}
+%----------------------------------------------------------
+
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+
+Escribe en notación decimal:
+\begin{enumerate}[label=\alph*)]
+\item $8$ centésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $19$ milésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $9$ cienmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $6$ unidades con $8$ centésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $8$ unidades con $215$ diezmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item $34$ unidades con $16$ cienmilésimas. \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\end{enumerate}
+
+Resuelve cada una de las siguentes operaciones, toma en cuenta de que debes de elegir una sola respuesta. Se te pedirá en la revisión que muestres las operaciones que realizaste para llegar al resultado que te permitió elegir la respuesta.
+
+\begin{enumerate}[label=\arabic*)]
+\item $1 \dfrac{1}{2} \divisionsymbol 2 \dfrac{1}{3} =$
+\begin{table}[H]
+\large
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+A) $\dfrac{9}{14}$ & B) $\dfrac{2}{3}$ & C) $\dfrac{5}{16}$ & D) $2 \dfrac{8}{57}$ & E) $1 \dfrac{2}{5}$ \\
+\end{tabular}
+\end{table}
+\item $5 \dfrac{2}{3} \divisionsymbol 8 \dfrac{1}{2} =$
+\begin{table}[H]
+\large
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+A) $\dfrac{2}{13}$ & B) $\dfrac{2}{3}$ & C) $\dfrac{9}{14}$ & D) $1 \dfrac{2}{5}$ & E) $\dfrac{3}{4}$ \\
+\end{tabular}
+\end{table}
+\item $\left( 2  + \dfrac{7}{8} \right) \divisionsymbol \left( 2 - \dfrac{1}{9} \right) =$
+\begin{table}[H]
+\large
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+A) $\dfrac{4}{9}$ & B) $1 \dfrac{1}{24}$ & C) $1$ & D) $\dfrac{5}{6}$ & E) $\dfrac{1}{6}$ \\
+\end{tabular}
+\end{table}
+\item $\left( 3 \dfrac{2}{5} \divisionsymbol  \dfrac{17}{3} \right) \times 1 \dfrac{2}{3} =$
+\begin{table}[H]
+\large
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+A) $2 \dfrac{1}{12}$ & B) $2 \dfrac{2}{5}$ & C) $\dfrac{1}{2}$ & D) $1 \dfrac{71}{136}$ & E) $2 \dfrac{70}{136}$ \\
+\end{tabular}
+\end{table}
+\item $\left( \dfrac{1}{2} \times \dfrac{4}{3} \right)  \divisionsymbol  \left( \dfrac{1}{2} \divisionsymbol 6 \right) \divisionsymbol \left( \dfrac{1}{2} + \dfrac{1}{4} \right) =$
+\begin{table}[H]
+\large
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+A) $10 \dfrac{2}{3}$ & B) $324$ & C) $1$ & D) $3 \dfrac{1}{5}$ & E) $26 \dfrac{2}{3}$ \\
+\end{tabular}
+\end{table}
+\end{enumerate}
+
+\newpage
+
+Ejercicios de tarea.
+
+\begin{enumerate}
+\item Diez obreros pueden hacer $14 \dfrac{2}{11}$ metros de una obra en una hora. \break \hfill ¿Cuántos metros hace cada obrero en ese tiempo? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item Una mercancía cuesta $\$ 2 \dfrac{3}{11}$ el kilo, ¿cuántos kilos puedo comprar con $\$ 80$ pesos? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item ¿Cuál es la velocidad en km/hora de un automóvil que en $5 \dfrac{2}{37}$ horas recorre $202 \dfrac{6}{37}$ kilómetros? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item Para hacer un metro de una obra un obrero emplea $6$ horas. ¿Cuánto tiempo empleará para hacer $14 \dfrac{2}{3}$ metros? ¿para $18 \dfrac{5}{33}$ metros?
+\\
+\textbf{R.} \rule{3cm}{0.1mm} \hspace{0.2cm} \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item Una veladora consume $\dfrac{3}{4}$ kilogramos de aceite por día. ¿Cuánto aceite consumirá en $\dfrac{5}{6}$ de día? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item En una escuela hay $324$ alumnos y el número de alumnas es los $\dfrac{7}{18}$ del total. ¿Cuántos varones hay en la escuela? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item Un hombre gasta en alimentación de su familia los $\dfrac{2}{5}$ de su sueldo mensual. Si en un mes gasta por ese concepto $802$ dólares, ¿cuál ha sido su sueldo en dólares de ese mes? \hspace{0.3cm} \textbf{R.} \rule{3cm}{0.1mm}
+\item Los $\dfrac{2}{3}$ de la edad de Mario son $24$ años y la edad de Roberto es los $\dfrac{4}{9}$ de la edad de Mario. ¿Cuál es la edad de Mario y de Roberto? 
+\\ 
+\textbf{R.} \underline{Edad de Mario: \hspace{3cm} Edad de Roberto: \hspace{2cm}}
+\end{enumerate}
+\end{document}

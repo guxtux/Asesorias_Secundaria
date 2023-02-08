@@ -1,0 +1,837 @@
+\documentclass[14pt, xcolor={usenames,dvipsnames}]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes, calc}
+\usepackage{physics}
+\usepackage{siunitx}
+\spanishdecimal{.}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\beamertemplatenavigationsymbolsempty
+%Information to be included in the title page:
+\title{Resolviendo vectores}
+\author{}
+\date{\today}
+\begin{document}
+\frame{\titlepage}
+\begin{frame}
+\frametitle{Los vectores}
+Un vector es un segmento de recta que representa una magnitud, como lo puede ser una fuerza, una velocidad o un desplazamiento.
+\\
+\bigskip
+\pause
+Un vector siempre se define por su \textbf{magnitud} y \textbf{dirección}.
+\end{frame}
+\begin{frame}
+\frametitle{Un vector}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+   \draw[->, thick] (0, 0) -- (3, 0);
+   \draw [fill, color=blue] (0, 0) circle (2pt); \pause
+   \node at (-0.5, -0.5) {Inicio}; \pause
+   \node at (3.5, -0.5) {Final};
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Magnitud de un vector}
+La magnitud de un vector se establece en correspondencia con una unidad de medida, es decir, si queremos indicar un desplazamiento, la magnitud del vector estará dada en metros, si queremos representar una velocidad, la magnitud del vector estará dada en metros por segundo.
+\end{frame}
+\begin{frame}
+\frametitle{Magnitud del vector}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+    \draw[->, thick] (0, 0) -- (5, 0);
+    \foreach \x in {0, 1, ..., 5}{
+        \draw (\x,-0.2) -- (\x,0.2);
+        \node at (\x, -0.5) {\small{\x}};
+    }
+    \node at (6.5, -0.5) {Unidades};
+\end{tikzpicture}
+\end{figure}
+El enunciado de nuestro problema debe de indicarnos las unidades de medida.
+\end{frame}
+\begin{frame}
+\frametitle{Dirección del vector}
+Cada vector tiene como referencia una dirección hacia donde apunta la flecha, normalmente se establece un ángulo con respecto a una línea horizontal.
+\end{frame}
+\begin{frame}
+\frametitle{Dirección del vector}
+\begin{tikzpicture}
+    \draw (0, 0) -- (3, 0);
+    \draw [->, thick] (0, 0) -- (2, 0);
+    \node at (7.5, 0) {El ángulo para este vector es $\theta = \ang{0}$};
+\end{tikzpicture} \pause
+\begin{tikzpicture}
+    \draw (0, 0) -- (3, 0);
+    \draw [->, thick, color=blue, rotate=30] (0, 0) -- (2, 0);
+    \draw (0.5, 0) arc (0:30:0.5);
+    \node at (1, 0.3) {\small{$\theta$}};
+    \node at (7.5, 0) {El ángulo para este vector es $\theta = \ang{30}$};
+\end{tikzpicture} \pause
+\begin{tikzpicture}
+    \draw (0, 0) -- (3, 0);
+    \draw [->, thick, color=red, rotate=60] (0, 0) -- (2, 0);
+    \draw (0.5, 0) arc (0:60:0.5);
+    \node at (1, 0.3) {\small{$\theta$}};
+    \node at (7.5, 0) {El ángulo para este vector es $\theta = \ang{60}$};
+\end{tikzpicture} \pause
+\begin{tikzpicture}
+    \draw (0, 0) -- (2, 0);
+    \draw [->, thick, color=OliveGreen] (0, 0) -- (0, 1.5);
+    \draw (0.25, 0) -- (0.25, 0.25) -- (0, 0.25);
+    \node at (1, 0.3) {\small{$\theta$}};
+    \node at (7.5, 0) {El ángulo para este vector es $\theta = \ang{90}$};
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\frametitle{Dirección del vector}
+\begin{tikzpicture}
+    \draw (0, 0) -- (2, 0);
+    \draw [->, thick, color=blue, rotate=120] (0, 0) -- (2, 0);
+    \draw (0.5, 0) arc (0:120:0.5);
+    \node at (1, 0.3) {\small{$\theta$}};
+    \node at (6.5, 0) {El ángulo $\theta = \ang{120}$};
+\end{tikzpicture} \pause
+\\[1em]
+\begin{tikzpicture}
+    \draw (0, 0) -- (2, 0);
+    \draw [->, thick, color=red] (0, 0) -- (-2, 0);
+    \draw (0.5, 0) arc (0:180:0.5);
+    \node at (1, 0.3) {\small{$\theta$}};
+    \node at (6.5, 0) {El ángulo $\theta = \ang{180}$};
+\end{tikzpicture} \pause
+\begin{tikzpicture}
+    \draw (0, 0) -- (2, 0);
+    \draw [->, thick, color=Violet, rotate=-220] (0, 0) -- (0, 1.5);
+    \draw (0.5, 0) arc (0:230:0.5);
+    \node at (1, 0.3) {\small{$\theta$}};
+    \node at (7.5, 0) {El ángulo $\theta = \ang{230}$};
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\frametitle{Método del polígono}
+El método del polígono permite obtener una \textcolor{blue}{resultante} a partir del manejo de los vectores involucrados.
+\\
+\bigskip
+\pause
+En este método participan varios vectores de los cuales debemos de conocer su magnitud y su dirección, es decir, el ángulo.
+\end{frame}
+\begin{frame}
+\frametitle{¿Cómo funciona el método?}
+Hay que utilizar ya sea un papel cuadrículado para señalar la magnitud de los vectores, para establecer la orientación, se ocupará un transportador para marcar el ángulo.
+\end{frame}
+\begin{frame}
+\frametitle{Orden en el método del polígono}
+Conforme se vayan señalando los vectores en el enunciado del ejercicio, se van trazando los vectores en el papel, recuerda que siempre tienen un punto de inicio y un punto donde terminan, ahí donde termina un vector, debemos de colocar el siguiente vector del ejercicio.
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo 1}
+Se tienen cuatro vectores:
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item \textbf{V1} = 3 unidades de magnitud, $\theta = \ang{0}$
+\item \textbf{V2} = 4 unidades de magnitud, $\theta = \ang{30}$
+\item \textbf{V3} = 2 unidades de magnitud, $\theta = \ang{45}$
+\item \textbf{V4} = 3 unidades de magnitud, $\theta = \ang{90}$
+\end{enumerate}
+\end{frame}
+\begin{frame}[plain]
+\begin{figure}
+\centering
+\begin{tikzpicture}
+    \draw[style=help lines] (0,0) grid[step=1cm] (9,7);
+
+    \coordinate (vec1) at (0:3); % Define some complex numbers
+    \coordinate (vec2) at (30:4);
+    \coordinate (vec3) at (45:2);
+
+    \draw[->,thick,blue] (0,0) -- (vec1) node [above, midway] {\tiny{$V1$}}; \pause
+
+    \draw[->,thick,red, rotate around={30:(3,0)}] (3,0) -- (7,0) node [above=0.3, midway] {\tiny{$V2$}};
+    \draw (3,0) -- (3.75, 0);
+    \draw [red] (3.5, 0) arc (0:30:0.5) node [right, pos=0.8] {\tiny{$\theta_{2}=\ang{30}$}}; \pause
+    
+    \draw[->,thick,Violet, rotate around={45:(6.45,2)}] (6.45,2) -- (8.45,2) node [above, midway] {\tiny{$V3$}};
+    \draw (6.45, 2) -- (7.2, 2);
+    \draw [Violet] (6.95, 2) arc (0:45:0.5) node [right, pos=0.8] {\tiny{$\theta_{3}=\ang{45}$}}; \pause
+
+    \draw[->,thick,OliveGreen] (7.85,3.4) -- (7.85,6.4)node [left, midway] {\tiny{$V4$}};
+    \draw (7.85, 3.4) -- (8.4, 3.4);
+    \draw (8, 3.4) -- (8, 3.6) -- (7.86, 3.6);
+    \node at (8.4,3.8) {\color{OliveGreen}{\tiny{$\theta_{4}=\ang{90}$}}}; \pause
+
+    \draw [->, dashed] (7.85, 6.4) -- (0, 0) node [above, midway, rotate=40] {\small{Resultante}}; \pause;
+
+    \node at (3, 6.5) {¿Cuál es la magnitud?}; \pause
+    \node at (3, 5.5) {¿Cuál es ángulo?};
+    \draw (7.86, 6.4) -- (8.3, 6.4);
+    \draw [->] (8, 6.4) arc (0:225:0.21);
+    \node at (8.4, 6.7) {\small{$\theta_{R}$}};
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Magnitud y ángulo}
+Para obtener el valor de la magnitud del vector resultante, así como el ángulo que describe, deberíamos de contar con una regla y un transportador muy precisos.
+\\
+\bigskip
+\pause
+Pero podemos obtener esos valores ocupando el \textbf{método análitico}.
+\end{frame}
+\begin{frame}
+\frametitle{El método analítico}
+El método analítico permite separar un vector en dos componentes:
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item Una componente (o parte) en la dirección $x$.
+\item Una componente (o parte) en la dirección $y$.
+\end{enumerate}
+\vspace*{0.5cm}
+\pause
+Para luego sumar las componentes en cada dirección de todos los vectores.
+\end{frame}
+\begin{frame}
+\frametitle{Descomposición de vectores}
+Un vector cualquiera se descompone en una parte $V_{x}$ y en otra $V_{y}$ cuando conocemos el ángulo que determina su dirección:
+\begin{figure}
+\centering
+\begin{tikzpicture}
+    \draw [->, gray] (0, 0) -- (4, 0) node [near end, pos=1.1] {$x$};
+    \draw [->, gray] (0, 0) -- (0, 4) node [near end, pos=1.1] {$y$};
+    \draw [->, thick] (0, 0) -- (2, 2) node [above, midway, rotate=45] {$V$};
+    \draw (0.5, 0) arc(0:45:0.5) node [right, pos=0.7] {$\theta$}; \pause
+    \draw [dashed] (2, 2) -- (2, 0); \pause
+    \draw [->, thick] (0, 0) -- (2, 0) node [below, midway] {\small{$V_{x}$}};
+    \node at (4.5, 3.5) {\small{$V_{x} = V * \text{coseno} (\theta)$}}; \pause
+    \draw [dashed] (2, 2) -- (0, 2); \pause
+    \draw [->, thick] (0, 0) -- (0, 2) node [left, midway] {\small{$V_{y}$}}; 
+    \node at (4.5, 2.5) {\small{$V_{y} = V * \text{seno} (\theta)$}}; \pause
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Descomposición en componentes}
+El vector $V1$ es de 3 unidades y con un ángulo $\ang{0}$, entonces sus componentes son:
+\begin{eqnarray*}
+V1_{x} &=& 3 * \text{coseno } (\ang{0}) = 3 * 1 =  3  \\[0.5em] \pause
+V1_{y} &=& 3 * \sen (\ang{0}) = 3 * 0 =  0
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Descomposición en componentes}
+El vector $V2$ es de 4 unidades y con un ángulo $\ang{30}$, entonces sus componentes son:
+\begin{eqnarray*}
+V2_{x} &=& 4 * \text{coseno } (\ang{30}) = 4 * 0.866 =  3.464  \\[0.5em] \pause
+V2_{y} &=& 4 * \text{seno} (\ang{30}) = 4 * 0.5 =  2
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Descomposición en componentes}
+El vector $V3$ es de 2 unidades y con un ángulo $\ang{45}$, entonces sus componentes son:
+\begin{eqnarray*}
+V3_{x} &=& 2 * \text{coseno } (\ang{45}) = 2 * 7071 =  1.414  \\[0.5em] \pause
+V3_{y} &=& 2 * \text{seno} (\ang{45}) = 2 * 7071 =  1.414
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Descomposición en componentes}
+El vector $V4$ es de 3 unidades y con un ángulo $\ang{90}$, entonces sus componentes son:
+\begin{eqnarray*}
+V4_{x} &=& 3 * \text{coseno } (\ang{90}) = 3 * 0 =  0 \\[0.5em] \pause
+V4_{y} &=& 3 * \text{seno} (\ang{90}) = 3 * 1 =  3
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Sumando las componentes}
+Una vez que ya tenemos las componentes de $V_{x}$ y $V_{y}$ de todos los vectores involucrados, hacemos la suma de cada componente, es decir:
+\begin{eqnarray*}
+VR_{x} &=& V1_{x} + V2_{x} + V3_{x} + V4_{x} \\[0.5em] \pause
+VR_{y} &=& V1_{y} + V2_{y} + V3_{y} + V4_{y} 
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Componentes del ejercicio}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.7]
+    \draw[style=help lines] (0,0) grid[step=1cm] (9,7);
+
+    \coordinate (vec1) at (0:3); % Define some complex numbers
+    \coordinate (vec2) at (30:4);
+    \coordinate (vec3) at (45:2);
+
+    \draw[->,thick,blue] (0,0) -- (vec1) node [above, midway] {\tiny{$V1$}}; 
+
+    \node [blue] at (1.5, -0.4) {\tiny{$V1_{x}$}}; \pause
+
+    \draw[->,thick,red, rotate around={30:(3,0)}] (3,0) -- (7,0) node [above=0.3, midway] {\tiny{$V2$}};
+    
+    \draw (3,0) -- (3.75, 0);
+    
+    \draw [dashed] (6.45, 2) -- (6.45, 0);
+    
+    \draw [->, thick, red] (3, 0) -- (6.45, 0) node [below, midway] {\tiny{$V2_{x}$}}; \pause
+    
+    \draw[->,thick, Violet, rotate around={45:(6.45,2)}] (6.45,2) -- (8.45,2) node [above, midway] {\tiny{$V3$}};
+    \draw[dashed] (7.85, 3.4) -- (7.85, 0);
+
+    \draw [->, thick, Violet] (6.45, 0) -- (7.85, 0) node [below, midway] {\tiny{$V3_{x}$}}; \pause
+    
+    \draw[->,thick,OliveGreen] (7.85,3.4) -- (7.85,6.4) node [left, midway] {\tiny{$V4$}}; \pause
+
+    \draw [dashed] (6.45, 2) -- (0, 2);
+
+    \draw [->, thick, red] (0, 0) -- (0, 2) node [left, midway] {\tiny{$V2_{y}$}}; \pause
+
+    \draw [dashed] (7.85, 3.4) -- (0, 3.4);
+
+    \draw [->, thick, Violet] (0, 2) -- (0, 3.4) node [left, midway] {\tiny{$V3_{y}$}}; \pause
+
+    \draw [dashed] (7.85, 6.4) -- (0, 6.4);
+
+    % \draw [->, thick, red] (0, 0) -- (0, 2) node [left, midway] {\tiny{$V4_{y}$}}; \pause
+   
+    \draw [->, thick, OliveGreen] (0, 3.4) -- (0, 6.4) node [left, midway] {\tiny{$V4_{y}$}};
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Obteniendo las componentes}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.5]
+    \draw[style=help lines] (0,0) grid[step=1cm] (9,7);
+
+    \coordinate (vec1) at (0:3); % Define some complex 
+
+    \draw[->,thick,blue] (0,0) -- (vec1); 
+
+    \node [blue] at (1.5, -0.4) {\tiny{$V1_{x}$}}; \pause
+
+    \draw [->, thick, red] (3, 0) -- (6.45, 0) node [below, midway] {\tiny{$V2_{x}$}}; \pause
+
+    \draw [->, thick, Violet] (6.45, 0) -- (7.85, 0) node [below, midway] {\tiny{$V3_{x}$}}; \pause
+    
+    \draw [->, thick, red] (0, 0) -- (0, 2) node [left, midway] {\tiny{$V2_{y}$}}; \pause
+
+    \draw [->, thick, Violet] (0, 2) -- (0, 3.4) node [left, midway] {\tiny{$V3_{y}$}};
+    
+    \draw [->, thick, OliveGreen] (0, 3.4) -- (0, 6.4) node [left, midway] {\tiny{$V4_{y}$}};
+\end{tikzpicture}
+\end{figure}
+\begin{eqnarray*}
+VR_{x} &=& 3 + 3.464 + 1.414 + 0 = 7.878\\[0.5em] \pause
+VR_{y} &=& 0 + 2 + 1.414 + 3 = 6.414
+\end{eqnarray*}
+\pause
+\fontsize{12}{12}\selectfont
+Estas son las componentes del vector resultante en las direcciones $x$ e $y$.
+\end{frame}
+\begin{frame}
+\frametitle{Gráficamente tenemos}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.7]
+    \draw [->, gray] (0, 0) -- (8.5, 0) node [near end, pos=1.1] {$x$};
+    \draw [->, gray] (0, 0) -- (0, 8.5) node [near end, pos=1.1] {$y$};
+    \draw [->, thick] (0, 0) -- (7.878, 0) node [below, midway] {\small{$VR_{x}$}};
+    \draw [->, thick] (0, 0) -- (0, 6.414) node [left, midway] {\small{$VR_{y}$}};
+    \draw (0.5, 0) -- (0.5, 0.5) -- (0, 0.5);
+    \node [text width=6cm] at (6, 4) {\small{Falta obtener la magnitud y el ángulo del vector resultante}};
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Teorema de Pitágoras}
+Para obtener la magnitud y el ángulo del vector resultante debemos de apoyarnos con el teorema de Pitágoras:
+\begin{figure}
+\centering
+\begin{tikzpicture}[font=\small]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,3);
+    \coordinate (C) at (3,0);
+    \draw (A) -- node[above,sloped]{Hipotenusa} (B)
+                -- node[below,rotate=180,sloped] {Opuesto} (C)
+                -- node[below] {Adyacente} (A);
+    % \path pic[draw, angle radius=5mm, "$\theta$",angle  eccentricity=1.5] {angle = C--A--B};
+    \draw (0.5, 0) arc (0:60:0.35);
+    \node at (0.7, 0.3) {$\theta$};
+    \draw ($(C)!3mm!(B)$) -| ($(C)!3mm!(A)$);
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{La hipotenusa es la magnitud del vector}
+En la figura anterior revisamos que la hipotenusa del triángulo rectángulo formado por $V_{x}$ y $V_{y}$ es la magnitud del vector resultante, por lo que aplicamos la correspondiente fórmula:
+\begin{align*}
+\text{Hipotenusa} =  \sqrt{VR_{x}^{2} + VR_{y}^{2}}
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{La hipotenusa es la magnitud del vector}
+\begin{eqnarray*}
+\text{Magnitud} &=& \sqrt{VR_{x}^{2} + VR_{y}^{2}} = \\[0.5em] \pause
+&=& \sqrt{(7.878)^{2} + (6.414)^{2}} = \\[0.5em] \pause
+&=& \sqrt{62.062 + 41.139} = \\[0.5em] \pause
+&=& \sqrt{101.201} = \\[0.5em] \pause
+&=& 10.059 \simeq 10.06 \text{  Unidades}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Calculando el ángulo}
+\fontsize{12}{12}\selectfont
+El ángulo que forma el vector resultante, se obtiene también de la geometría del triángulo recto que se forma con las componentes $VR_{x}$ y $VR_{y}$:
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+        \draw [->, gray] (0, 0) -- (8.5, 0) node [near end, pos=1.1] {$x$};
+        \draw [->, gray] (0, 0) -- (0, 8.5) node [near end, pos=1.1] {$y$};
+        \draw [->, thick] (0, 0) -- (7.878, 0) node [below, midway] {\small{$VR_{x}$}};
+        \draw [->, thick] (0, 0) -- (0, 6.414) node [left, midway] {\small{$VR_{y}$}};
+        \draw (0.5, 0) -- (0.5, 0.5) -- (0, 0.5);
+        \draw [->, dashed] (7.878, 0) -- (0, 6.414);
+        \draw (7, 0) arc (180:150:1);
+        \node at (6.5, 0.4) {\small{$\theta$}}; \pause
+        \node at (9, 8.5) {El ángulo es igual a:};
+        \node at (9, 6) {$\tan \theta = \dfrac{\text{opuesto}}{\text{adyacente}} = \dfrac{VR_{y}}{VR_{x}}$};
+    \end{tikzpicture}
+    \end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Obteniendo el ángulo}
+Entonces al sustituir los valores de las componentes $VR_{x}$ y $VR_{y}$, tenemos que:
+\begin{eqnarray*}
+\tan \theta &=& \dfrac{\text{opuesto}}{\text{adyacente}} = \dfrac{VR_{y}}{VR_{x}} = \\[0.5em]
+\tan \theta &=& \dfrac{6.414}{7.878} = \\[0.5em]
+\tan \theta &=& 0.8141
+\end{eqnarray*}
+\pause
+Pero lo que buscamos es el ángulo $\theta$, no la tangente del ese ángulo.
+\end{frame}
+\begin{frame}
+\frametitle{El valor del ángulo}
+Para obtener el valor del ángulo, tomamos el \emph{arco tangente} del valor obtenido, es decir:
+\pause
+\begin{eqnarray*}
+\theta &=& \text{arco tangente } 0.8141 = \\[0.5em]
+\theta &=& \ang{39.15}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Conclusión}
+Entonces hemos hallado que la magnitud y él angulo del vector resultante es:
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+\begin{tabular}{l | c}
+Magnitud & $10.06$ Unidades \\ \hline
+Ángulo & $\ang{39.15}$
+\end{tabular}
+\end{table}
+\end{frame}
+\begin{frame}
+\frametitle{Tu ejercicio}
+Obtener las resultantes por el método del polígono:
+\\[0.5em]
+$F1 = \SI{3}{\newton}$, $F2 = \SI{4}{\newton}$  ángulo $\ang{40}$, \\[0.5em]
+$F3 = \SI{5}{\newton}$, $F4 = \SI{4}{\newton}$, ángulo $\ang{50}$, \\[0.5em]
+$F5 = \SI{5}{\newton}$, $F6 = \SI{6}{\newton}$, ángulo $\ang{70}$,\\[0.5em]
+$F7 = \SI{4}{\newton}$ ángulo $\ang{60}$
+\\[0.5em]
+\underline{Escala 0.5cm = 1 N}
+\end{frame}
+\begin{frame}
+\frametitle{Resolviendo el ejercicio}
+De acuerdo al enunciado, tenemos 3 pares de vectores con un ángulo, que debemos de resolver primero para luego ocupar con las resultantes el método del polígono.
+\\
+\bigskip
+\pause
+Hagamos el primer par de vectores $F1$ y $F2$:
+\end{frame}
+\begin{frame}
+\frametitle{Primer par de vectores}
+$F1 = \SI{3}{\newton}$, $F2 = \SI{4}{\newton}$  ángulo $\ang{40}$
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.5]
+    \draw[style=help lines, gray] (0,0) grid[step=1cm] (4,2);
+
+    \draw [->, thick] (0, 0) -- (1.5, 0) node [below, midway] {\tiny{$F1$}};\pause
+
+    \draw [->, thick, rotate around={40:(1.5,0)}] (1.5, 0) -- (3.5, 0) node [below, near end] {\tiny{$F2$}};
+
+    \draw (1.8, 0) arc (0:40:0.3);
+    \node at (2.2, 0.25) {\tiny{$\ang{40}$}}; \pause
+
+    \draw [dashed] (0, 0) -- (3, 1.25);
+    \draw (0.5, 0) arc (0:33:0.3);
+    \node at (0.8, 0.2){\footnotesize{$\theta$}};
+\end{tikzpicture}
+\end{figure}
+Por lo que tenemos que obtener la magnitud y el ángulo resultantes, ocupando el método del polígono.
+\end{frame}
+\begin{frame}
+\frametitle{Primera resultante}
+Hay que calcular las componentes $F1_{x}$, $F1_{y}$, así como las componentes $F2_{x}$ y $F2_{y}$:
+\pause
+\begin{table}
+    \renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c | l | l}
+Componente & Fórmula & Valor \\ \hline
+$F1_{x}$ & $= F1 * \text{coseno } (\ang{0})$ & $= 3*1 = 3$ \\ \hline
+$F1_{y}$ & $= F1 * \text{seno } (\ang{0})$ & $= 3*0 = 0$ \\ \hline
+$F2_{x}$ & $= F2 * \text{coseno } (\ang{40})$ & $= 4*0.766 = 3.064$ \\ \hline
+$F2_{y}$ & $= F2 * \text{seno } (\ang{40})$ & $= 4*0.642 = 2.571$ \\ \hline
+\end{tabular}
+\end{table}   
+\end{frame}
+\begin{frame}
+\frametitle{Primera resultante}
+Entonces al hacer las sumas por cada componente:
+\begin{eqnarray*}
+R1_{x} &=& F1_{x} + F2_{x} = 3 + 3.064 = \SI{6.064}{\newton} \\[0.5em] \pause
+R1_{y} &=& F1_{y} + F2_{y} = 0 + 2.571 = \SI{2.571}{\newton}
+\end{eqnarray*}
+\pause
+La magnitud del vector resultante es:
+\begin{eqnarray*}
+R1 &=& \sqrt{(R1_{x})^{2} + (R1_{y})^{2}} = \\[0.5em] \pause
+R1 &=& \sqrt{(6.064)^{2} + (2.7571)^{2}} = \sqrt{43.382} = \\[0.5em] \pause
+R1 &=& \SI{6.586}{\newton}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{El ángulo de R1}
+El ángulo del vector $R1$ lo obtenemos como se revisó anteriormente:
+\begin{eqnarray*}
+\tan \theta &=& \dfrac{R1_{y}}{R1_{x}} = \dfrac{2.571}{6.064} = \\[0.5em] \pause
+\tan \theta &=& 0.423
+\end{eqnarray*}
+\pause
+Para recuperar el ángulo, debemos usar la función arco tangente:
+\begin{eqnarray*}
+\theta &=& \text{arco tangente} (0.423) \\[0.5em] \pause
+\theta &=& \ang{22.97}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Segundo par de vectores}
+$F3 = \SI{5}{\newton}$, $F4 = \SI{4}{\newton}$  ángulo $\ang{50}$
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.5]
+    \draw[style=help lines, gray] (0,0) grid[step=1cm] (4,2);
+
+    \draw [->, thick] (0, 0) -- (2.5, 0) node [below, midway] {\tiny{$F3$}};\pause
+
+    \draw [->, thick, rotate around={50:(2.5,0)}] (2.5, 0) -- (4.5, 0) node [below, near end] {\tiny{$F4$}};
+
+    \draw (2.7, 0) arc (0:40:0.3);
+    \node at (3, 0.25) {\tiny{$\ang{50}$}}; \pause
+
+    \draw [dashed] (0, 0) -- (3.75, 1.5);
+    \draw (0.5, 0) arc (0:40:0.3);
+    \node at (0.8, 0.2){\footnotesize{$\theta$}};
+\end{tikzpicture}
+\end{figure}
+Por lo que tenemos que obtener la magnitud y el ángulo resultantes, ocupando el método del polígono.
+\end{frame}
+    
+\begin{frame}
+\frametitle{Segunda resultante}
+Hay que calcular las componentes $F3_{x}$, $F4_{y}$, así como las componentes $F4_{x}$ y $F4_{y}$:
+\pause
+\begin{table}
+    \renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c | l | l}
+Componente & Fórmula & Valor \\ \hline
+$F3_{x}$ & $= F3 * \text{coseno } (\ang{0})$ & $= 5*1 = 5$ \\ \hline
+$F3_{y}$ & $= F3 * \text{seno } (\ang{0})$ & $= 5*0 = 0$ \\ \hline
+$F4_{x}$ & $= F4 * \text{coseno } (\ang{50})$ & $= 4*0.642 = 2.571$ \\ \hline
+$F4_{y}$ & $= F4 * \text{seno } (\ang{50})$ & $= 4*0.766 = 3.064$ \\ \hline
+\end{tabular}
+\end{table}   
+\end{frame}
+\begin{frame}
+\frametitle{Segunda resultante}
+Entonces al hacer las sumas por cada componente:
+\begin{eqnarray*}
+R2_{x} &=& F3_{x} + F4_{x} = 5 + 2.571 = \SI{7.571}{\newton} \\[0.5em] \pause
+R2_{y} &=& F3_{y} + F4_{y} = 0 + 3.064 = \SI{3.064}{\newton}
+\end{eqnarray*}
+\pause
+La magnitud del vector resultante es:
+\begin{eqnarray*}
+R2 &=& \sqrt{(R2_{x})^{2} + (R2_{y})^{2}} = \\[0.5em] \pause
+R2 &=& \sqrt{(7.571)^{2} + (3.064)^{2}} = \sqrt{66.708} = \\[0.5em] \pause
+R2 &=& \SI{8.167}{\newton}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{El ángulo de R2}
+El ángulo del vector $R2$ lo obtenemos como se revisó anteriormente:
+\begin{eqnarray*}
+\tan \theta &=& \dfrac{R2_{y}}{R2_{x}} = \dfrac{3.064}{7.571} = \\[0.5em] \pause
+\tan \theta &=& 0.404
+\end{eqnarray*}
+\pause
+Para recuperar el ángulo, debemos usar la función arco tangente:
+\begin{eqnarray*}
+\theta &=& \text{arco tangente} (0.404) \\[0.5em] \pause
+\theta &=& \ang{21.99}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{¿Qué hemos resuelto?}
+Se han obtenido dos resultantes $R1$ y $R2$, tanto su magnitud, ángulo y el valor de las componentes en las direcciones $x$ e $y$.
+\\
+\bigskip
+\pause
+Esos valores los vamos a ocupar ya casi al final del ejercicio.
+\end{frame}
+\begin{frame}
+\frametitle{Tercer par de vectores}
+$F5 = \SI{5}{\newton}$, $F6 = \SI{6}{\newton}$  ángulo $\ang{70}$
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.5]
+    \draw[style=help lines, gray] (0,0) grid[step=1cm] (4,3);
+
+    \draw [->, thick] (0, 0) -- (2.5, 0) node [below, midway] {\tiny{$F5$}};\pause
+
+    \draw [->, thick, rotate around={70:(2.5,0)}] (2.5, 0) -- (5.5, 0) node [right, midway] {\tiny{$F6$}};
+
+    \draw (2.7, 0) arc (0:70:0.2);
+    \node at (2.9, 0.25) {\tiny{$\ang{70}$}}; \pause
+
+    \draw [dashed] (0, 0) -- (3.5, 2.8);
+    \draw (0.5, 0) arc (0:40:0.3);
+    \node at (0.75, 0.2){\footnotesize{$\theta$}};
+\end{tikzpicture}
+\end{figure}
+Por lo que tenemos que obtener la magnitud y el ángulo resultantes, ocupando el método del polígono.
+\end{frame}
+\begin{frame}
+\frametitle{Tercera resultante}
+Hay que calcular las componentes $F5_{x}$, $F5_{y}$, así como las componentes $F6_{x}$ y $F6_{y}$:
+\pause
+\begin{table}
+    \renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c | l | l}
+Componente & Fórmula & Valor \\ \hline
+$F5_{x}$ & $= F5 * \text{coseno } (\ang{0})$ & $= 5*1 = 5$ \\ \hline
+$F5_{y}$ & $= F5 * \text{seno } (\ang{0})$ & $= 5*0 = 0$ \\ \hline
+$F6_{x}$ & $= F6 * \text{coseno } (\ang{70})$ & $= 6*0.342 = 2.052$ \\ \hline
+$F6_{y}$ & $= F6 * \text{seno } (\ang{70})$ & $= 6*0.939 = 5.638$ \\ \hline
+\end{tabular}
+\end{table}   
+\end{frame}
+\begin{frame}
+\frametitle{Tercera resultante}
+Entonces al hacer las sumas por cada componente:
+\begin{eqnarray*}
+R3_{x} &=& F5_{x} + F6_{x} = 5 + 2.052 = \SI{7.052}{\newton} \\[0.5em] \pause
+R3_{y} &=& F3_{y} + F4_{y} = 0 + 5.638 = \SI{5.638}{\newton}
+\end{eqnarray*}
+\pause
+La magnitud del vector resultante es:
+\begin{eqnarray*}
+R3 &=& \sqrt{(R3_{x})^{2} + (R3_{y})^{2}} = \\[0.5em] \pause
+R3 &=& \sqrt{(7.052)^{2} + (5.638)^{2}} = \sqrt{81.517} = \\[0.5em] \pause
+R3 &=& \SI{9.028}{\newton}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{El ángulo de R3}
+El ángulo del vector $R3$ lo obtenemos como se revisó anteriormente:
+\begin{eqnarray*}
+\tan \theta &=& \dfrac{R3_{y}}{R3_{x}} = \dfrac{5.638}{7.052} = \\[0.5em] \pause
+\tan \theta &=& 0.799
+\end{eqnarray*}
+\pause
+Para recuperar el ángulo, debemos usar la función arco tangente:
+\begin{eqnarray*}
+\theta &=& \text{arco tangente} (0.799) \\[0.5em] \pause
+\theta &=& \ang{38.62}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Avance del ejercicio}
+Se han obtenido las resultantes de los pares de vectores, y nos hemos quedado con cuatro vectores:
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item $R1$ con magnitud de $\SI{6.586}{\newton}$ y ángulo = $\ang{22.97}$
+\item $R2$ con magnitud de $\SI{8.167}{\newton}$ y ángulo = $\ang{21.99}$
+\item $R3$ con magnitud de $\SI{9.028}{\newton}$ y ángulo = $\ang{38.62}$
+\item $F7$ con magnitud de $\SI{4}{\newton}$ y ángulo = $\ang{60}$
+\end{enumerate}
+\pause
+Para calcular la resultante total ocupamos nuevamente el método del polígono.
+\end{frame}
+\begin{frame}
+\frametitle{Gráficamente tenemos lo siguiente}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.7, x=0.5cm, y=0.5cm]
+    \draw[style=help lines] (0,0) grid[step=1cm] (24, 16);
+
+    \coordinate (O) at (0, 0);
+    \coordinate (A) at (6.064, 2.57);
+    \coordinate (B) at (13.63, 5.63);
+    \coordinate (C) at (20.58, 11.26);
+    \coordinate (D) at (22.58, 14.72);
+
+
+    \draw [->, thick, blue] (O) -- (A);
+    \draw [blue] (4, 2.5) node {\tiny{$R1$}};
+    
+    \draw [->, thick, red] (A) -- (B);
+    \draw [red] (10, 5)node {\tiny{$R2$}};
+    
+    \draw [->, thick, Violet] (B) -- (C);
+    \draw [Violet] (17, 9) node {\tiny{$R3$}};
+
+    \draw [->, thick, OliveGreen] (C) -- (D);
+    \draw [OliveGreen] (21, 13) node {\tiny{$F7$}};
+
+    \draw [->, thick] (D) -- (O);
+
+    \draw (2, 0) arc (0:23:2);
+    \draw [blue] (4.5, 0.8) node {\tiny{$\theta=\ang{22.97}$}};
+
+    \draw (A) -- (8.5, 2.57);
+    \draw (8,2.57) arc (0:23:2);
+    \draw [red] (10, 3) node {\tiny{$\theta=\ang{21.99}$}};
+    
+    \draw (B) -- (15.8, 5.63);
+    \draw (15.5, 5.63) arc (0:38:2);
+    \draw [Violet] (17.5, 6.5) node {\tiny{$\theta=\ang{38.62}$}};
+
+    \draw (C) -- (22, 11.26);
+    \draw (21.5, 11.26) arc (0:60:1);
+    \draw [OliveGreen] (22.7, 12) node {\tiny{$\theta=\ang{60}$}}; \pause
+
+    \draw (12, 10) node[rotate=35] {\small{Resultante}};
+
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Penúltimo paso}
+Para resolver el ejercicio nos hace falta calcular las componentes $F7_{x}$ y $F7_{y}$.
+\\
+\bigskip
+\pause
+Y así sumar todas las componentes de los vectores que hemos obtenido.
+\end{frame}
+\begin{frame}
+\frametitle{Componentes del vector $F7$}
+Para obtener las componentes del vector $F7$ tanto en la dirección $x$, como en $y$, hacemos la tabla anterior, usando su magnitud y ángulo
+\pause
+\begin{table}
+    \renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c | l | l}
+Componente & Fórmula & Valor \\ \hline
+$F7_{x}$ & $= F7 * \text{coseno } (\ang{60})$ & $= 4*0.5 = 2$ \\ \hline
+$F7_{y}$ & $= F7 * \text{seno } (\ang{60})$ & $= 4*0.866 = 3.464$
+\end{tabular}
+\end{table}   
+\end{frame}
+\begin{frame}
+\frametitle{Ocupando los resultados anteriores}
+Ya podemos hacer la suma por componentes de cada vector del problema:
+\begin{eqnarray*}
+RT_{x} &=& R1_{x} + R2_{x} + R3_{x} + F7_{x} = \\[0.5em] \pause
+RT_{x} &=& 6.654 + 7.571 + 7.052 + 2 = \\[0.5em] \pause
+RT_{x} &=& \SI{23.277}{\newton}
+\end{eqnarray*}
+\pause
+\begin{eqnarray*}
+RT_{y} &=& R1_{y} + R2_{y} + R3_{y} + F7_{y} = \\[0.5em] \pause
+RT_{y} &=& 2.571 + 3.064 + 5.638 + 3.464 = \\[0.5em] \pause
+RT_{y} &=& \SI{14.737}{\newton}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Vector resultante}
+\fontsize{12}{12}\selectfont
+Ya podemos obtener tanto la magnitud como el ángulo que forma el vector resultante, a partir de las componentes $RT_{x}$ y $RT_{y}$:
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.6, x=0.5cm, y=0.5cm]
+    \draw[style=help lines] (0,0) grid[step=1cm] (26,16);
+
+    \draw [->, gray] (0, 0) -- (26, 0) node [near end, pos=1.1] {$x$};
+    \draw [->, gray] (0, 0) -- (0, 16) node [near end, pos=1.1] {$y$};
+    \draw [->, thick] (0, 0) -- (23.27, 0) node [below, midway] {\small{$RT_{x}$}};
+    \draw [->, thick] (0, 0) -- (0, 14.37) node [left, midway] {\small{$RT_{y}$}};
+    \draw (0.5, 0) -- (0.5, 0.5) -- (0, 0.5);
+    \draw [->, dashed] (23.27, 0) -- (0, 14.37);
+    \draw (21, 0) arc (180:150:2.3);
+    \node at (19, 1) {\small{$\theta$}};
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Valores obtenidos}
+Finalmente calculamos el valor de la magnitud del vector resultante de todo el ejercicio:
+\begin{eqnarray*}
+RT &=& \sqrt{(RT_{x})^{2} + (RT_{y})^{2}} = \\[0.5em] \pause
+RT &=& \sqrt{(23.277)^{2} + (14.737^{2})} = \\[0.5em] \pause
+RT &=& \sqrt{541.818 + 217.179} = \\[0.5em] \pause
+RT &=& \sqrt{758.997} = \\[0.5em] \pause
+RT &=& \SI{27.55}{\newton}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Valor del ángulo}
+El ángulo del vector resultante se calcula de la misma manera que se hizo para los ángulos de los vectores resultantes:
+\begin{eqnarray*}
+\tan \theta &=& \dfrac{RT_{y}}{RT_{x}} = \dfrac{14.737}{23.277} = \\[0.5em] \pause
+\tan \theta &=& 0.633
+\end{eqnarray*}
+\pause
+Para recuperar el ángulo, debemos usar la función arco tangente:
+\begin{eqnarray*}
+\theta &=& \text{arco tangente} (0.633) \\[0.5em] \pause
+\theta &=& \ang{32.33}
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Conclusión}
+El resultado que se debe de señalar es el siguiente:
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+\begin{tabular}{l | c}
+Magnitud & $27.55$ Newtons \\ \hline
+Ángulo & $\ang{32.33}$
+\end{tabular}
+\end{table}
+En la siguiente figura se presenta el vector con la correspondiente escala:
+\end{frame}
+\begin{frame}
+\frametitle{El vector resultante final}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.6, x=0.5cm, y=0.5cm]
+    \draw[style=help lines] (0,0) grid[step=1cm] (26,16);
+
+    \coordinate (O) at (0, 0);
+    \coordinate (A) at (23.277, 14.737);
+
+    \draw [->, gray] (0, 0) -- (26, 0) node [near end, pos=1.1] {$x$};
+    \draw [->, gray] (0, 0) -- (0, 16) node [near end, pos=1.1] {$y$};
+    \draw [->, thick] (O) -- (A);
+    \draw (10, 8) node [rotate=35] {\small{$RT$ de $27.55$ Newtons}};
+    \draw (3, 0) arc(0:30:3.3);
+    \node at (6.5, 1) {\small{$\theta=\ang{32.33}$}};
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\end{document}

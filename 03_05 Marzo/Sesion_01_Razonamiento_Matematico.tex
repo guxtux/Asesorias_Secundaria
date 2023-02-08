@@ -1,0 +1,533 @@
+\input{preambulo_presentacion_Berlin_beaver}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
+    \usebeamerfont{section in foot} \insertsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in foot}%
+    \usebeamerfont{subsection in foot}  \insertsubsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot} \insertshortdate{} \hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice})}
+%\newcommand\choicelabel{\thechoice.}
+\newcommand\choicelabel{\thechoice}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+\newenvironment{oneparchoices}%
+  {%
+    \setcounter{choice}{0}%
+    \def\choice{%
+      \refstepcounter{choice}%
+      \ifnum\value{choice}>1\relax
+        \penalty -50\hskip 1em plus 1em\relax
+      \fi
+      \choicelabel
+      \nobreak\enskip
+    }% choice
+    % If we're continuing the paragraph containing the question,
+    % then leave a bit of space before the first choice:
+    \ifvmode\else\enskip\fi
+    \ignorespaces
+  }%
+  {}
+%----------------------------------------------------------
+%----------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}{}
+\date{16 de marzo de 2021}
+\title{Sesión 1. Razonamiento matemático}
+\subtitle{Asesoría}
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+\spanishdecimal{.}
+\section*{Contenido}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideallsubsections]}
+\section{Habilidad matemática}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideothersubsections]}
+
+\subsection{Introducción}
+\begin{frame}
+\frametitle{Habilidades}
+La prueba de \emph{Razonamiento o Habilidad Matemática}, se ha diseñado para medir habilidades que se relacionan con el trabajo.
+\\
+\bigskip
+\pause
+La habilidad de aplicar las matemáticas en situaciones nuevas y diferentes, es de gran importancia para el siguiente nivel de bachillerato.
+\end{frame}
+\begin{frame}
+\frametitle{Áreas para desarrollar la habilidad}
+Los ejercicios de razonamiento matemático miden la habilidad para procesar, analizar y utilizar información en la \emph{Aritmética, el Álgebra y la Geometría}.
+\end{frame}
+\begin{frame}
+\frametitle{¿Qué es la habilidad matemática?}
+La \emph{Habilidad Matemática} es aquella en que el alumno es capaz de \emph{comprender conceptos, proponer y efectuar algoritmos y desarrollar aplicaciones a través de la resolución de problemas}.
+\end{frame}
+\begin{frame}
+\frametitle{Enfoque para el desarrollo}
+En estas se consideran tres aspectos.
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item En \textcolor{blue}{Aritmética}: en operaciones fundamentales como suma, resta, multiplicación, división, potenciación y radicación, con números enteros y racionales, cálculos de porcentajes, proporciones y promedios, series numéricas y comparación de cantidades.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Enfoque para el desarrollo}
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\conti
+\item En \textcolor{blue}{Álgebra}: operaciones fundamentales con literales, simplificaciones de expresiones algebraicas, simbolización de expresiones, operaciones con potencias y raíces, factorización, ecuaciones y funciones lineales y cuadráticas.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Enfoque para el desarrollo}
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\conti
+\item En \textcolor{blue}{Geometría}: perímetros y áreas de figuras geométricas, propiedades de los triángulos (principales teoremas), propiedades de rectas paralelas y perpendiculares y Teorema de Pitágoras.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Enfoque para el desarrollo}
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\conti
+\item \textcolor{blue}{Sucesiones numéricas}: Serie de términos formados de acuerdo con una ley.
+\item \textcolor{blue}{Series Espaciales}: Son figuras o trazos que siguen reglas o patrones determinados.
+\item \textcolor{blue}{Imaginación Espacial}: Hay que echar a andar nuestra imaginación al $100\%$, ya que se presentan trazos, recortes y dobleces sin tener que hacerlo físicamente.
+\end{enumerate}
+\end{frame}
+
+\subsection{Ejercicio 1}
+
+\begin{frame}
+\frametitle{Ejercicio 1}
+¿Qué número sigue a esta sucesión numérica?
+\begin{align*}
+4, \, 8, \, 12, \, 16, \, 20, \ldots
+\end{align*}
+\begin{choices}
+\choice $18$ \\
+\choice $24$ \\
+\choice $16$ \\
+\choice $20$ \\
+\choice $28$ \\
+\end{choices}
+\end{frame}
+\begin{frame}
+\frametitle{Punto relevante}
+De las cinco posibles respuestas, \textbf{solo una es la correcta}.
+\\
+\bigskip
+\pause
+Hay preguntas a las que se les llama \emph{confusoras}, es decir, aparentan tener sentido con el enunciado, pero al hacer un análisis de las mismas, nos daremos cuenta de que no son correctas.
+\end{frame}
+\begin{frame}
+\frametitle{Primera estrategia}
+Si hacemos una revisión de la información que nos da el enunciado y la secuencia, veremos que hay elementos que destacan:
+\pause
+\begin{align*}
+4, \, 8, \, 12, \, 16, \, 20, \ldots
+\end{align*}
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item Los números de la sucesión son pares.
+\item Hay un orden ascendente.
+\end{enumerate}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Segunda estrategia}
+Veamos que en las posibles respuestas, hay valores que ya están presentes en la sucesión, por lo que estos valores los debemos de descartar como respuesta:
+\begin{align*}
+4, \, 8, \, 12, \, 16, \, 20, \ldots
+\end{align*}
+\begin{choices}
+\choice $18$ \\
+\choice $24$ \\
+\choice $16$ \\
+\choice $20$ \\
+\choice $28$ \\
+\end{choices}
+\pause
+\begin{tikzpicture}[overlay]
+  \draw [fill=red, opacity=0.25] (1.2, 2) rectangle (2.6, 2.7);
+  \draw [fill=red, opacity=0.25] (5.3, 4.4) rectangle (5.9, 5.1);
+  \draw [thick, red] (2.8, 2.4) -- (5.5, 2.4) -- (5.5, 4.2); \pause
+  \node [text = red] at (0.8, 2.35) {\xmark};
+  \pause
+  \draw [fill=blue, opacity=0.25] (1.2, 1.3) rectangle (2.6, 1.9);
+  \draw [fill=blue, opacity=0.25] (6, 4.4) rectangle (6.7, 5.1);
+  \draw [thick, blue] (2.8, 1.6) -- (6.3, 1.6) -- (6.3, 4.2);
+  \pause
+  \node [text = red] at (0.8, 1.6) {\xmark};
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\frametitle{Segunda estrategia}
+Vemos que el inciso \textbf{A)} indica un valor, pero como sabemos que la sucesión es creciente, el valor de $18$ no podría ser el siguiente.
+\end{frame}
+\begin{frame}
+\frametitle{Segunda estrategia}
+\vspace*{-2cm}
+\begin{align*}
+  4, \, 8, \, 12, \, 16, \, 20, \ldots
+\end{align*}
+\begin{choices}
+\choice $18$ \\
+\choice $24$ \\
+\choice $16$ \\
+\choice $20$ \\
+\choice $28$ \\
+\end{choices}
+\pause
+\begin{tikzpicture}[overlay]
+  \draw [fill=red, opacity=0.25] (1.2, 3.9) rectangle (2.6, 4.6);
+  \draw [fill=red, opacity=0.25] (5.2, 5.1) rectangle (6.8, 5.7);
+  \draw [thick, red] (2.8, 4.3) -- (6, 4.3) -- (6, 5);
+  \node [text = red] at (0.8, 2.5) {\xmark};
+  \node [text = red] at (0.8, 1.7) {\xmark};
+  \pause
+  \node [text = red] at (0.8, 4.25) {\xmark};
+\end{tikzpicture}
+
+Por lo que lo descartamos.
+\end{frame}
+\begin{frame}
+\frametitle{Segunda estrategia}
+Quedan dos incisos, uno es el correcto:
+\begin{align*}
+  4, \, 8, \, 12, \, 16, \, 20, \ldots
+\end{align*}
+\begin{choices}
+\choice $18$ \\
+\choice $24$ \\
+\choice $16$ \\
+\choice $20$ \\
+\choice $28$ \\
+\end{choices}
+\pause
+\begin{tikzpicture}[overlay]
+  \node [text = red] at (0.8, 2.5) {\xmark};
+  \node [text = red] at (0.8, 1.7) {\xmark};
+  \node [text = red] at (0.8, 4.25) {\xmark};
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\frametitle{Determinando patrones}
+El siguiente paso es identificar un \emph{posible patrón} entre los valores de la sucesión.
+\\
+\bigskip
+\pause
+Podemos elegir el recorrido entre:
+\pause
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item De izquierda a derecha.
+\item De derecha a izquierda.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Determinando patrones}
+De izquierda a derecha:
+\begin{eqnarray*}
+&4& \, (+ 4 = ) \, 8, \\[0.25em] \pause
+&8& \pause \, (+ 4 =) \, 12, \\[0.25em] \pause
+&12& \pause (+ 4 =) \, 16, \\[0.25em] \pause
+&16& \pause (+ 4 = ) \, 20, \\[0.25em] \pause
+&20& \pause (+ 4 = ) \, \pause 24 \\[0.25em] \pause
+&24& \pause (+4 = ) \, \pause 28
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{Solución}
+Hemos identificado el patrón de la sucesión: a cada término se le suma $4$, por lo que el siguiente término es $24$, el inciso \textbf{E)} con la respuesta $28$ aunque sería parte de la sucesión, no es el término siguiente de los que muestra el enunciado.
+\end{frame}
+\begin{frame}
+\frametitle{Solución}
+Entonces la solución es:
+\begin{align*}
+  4, \, 8, \, 12, \, 16, \, 20, \ldots
+\end{align*}
+\begin{choices}
+\choice $18$ \\
+\choice $24$ \\
+\choice $16$ \\
+\choice $20$ \\
+\choice $28$ \\
+\end{choices}
+\pause
+\begin{tikzpicture}[overlay]
+  \node [text = cadmiumgreen] at (0.8, 3.5) {\cmark};
+\end{tikzpicture}
+\end{frame}
+
+\subsection{Ejercicio 2}
+\begin{frame}
+\frametitle{Ejercicio 2}
+De las parejas de números propuestas, elige la que corresponda en la sucesión:
+\begin{align*}
+1, \, 9, \, 2, \, 8, \, 3, \, 7, \, \_\_ \, , \, \_\_
+\end{align*}
+\begin{choices}
+\choice $8, \, 2$ \\
+\choice $2, \, 9$ \\
+\choice $8, \, 10$ \\
+\choice $6, \, 4$ \\
+\choice $4, \, 6$ \\
+\end{choices}
+\end{frame}
+\begin{frame}
+\frametitle{Revisando el enunciado}
+El enunciado nos señala que ahora se tienen \emph{parejas de números}, por lo que el primer paso es identificar las parejas mediante paréntesis:
+\pause
+\begin{align*}
+(1, \, 9), \, (2, \, 8), \, (3, \, 7), \, (\_\_ \, , \, \_\_)
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{Analizando las parejas de números}
+El análisis se deberá de realizar a cada número de la pareja, con el respectivo de las otras parejas, para identificar un patrón.
+\end{frame}
+\begin{frame}
+\frametitle{Revisando los valores}
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item Cada pareja incluye valores enteros (sin decimales)
+\item Hagamos una revisión con el primer valor de cada pareja de números.
+\item Para luego hacer una revisión con el segundo valor de cada pareja de números.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Primer valor de la pareja de números}
+Tenemos entonces que con el primer valor de la pareja de números:
+\begin{align*}
+(1, \, 9), \, (2, \, 8), \, (3, \, 7), \, (\_\_ \, , \, \_\_)
+\end{align*}
+\begin{tikzpicture}[overlay]
+  \draw [fill=blue, opacity=0.25] (2.6, 1) rectangle (3, 1.6);
+  \draw [fill=blue, opacity=0.25] (4.1, 1) rectangle (4.5, 1.6);
+  \draw [fill=blue, opacity=0.25] (5.5, 1) rectangle (6, 1.6);
+\end{tikzpicture}
+\pause
+Encontramos que la sucesión \textcolor{red}{va aumentando en una unidad}.
+\end{frame}
+\begin{frame}
+\frametitle{Valor encontrado}
+De esta manera podemos concluir que el valor del primer número es:
+\begin{align*}
+(1, \, 9), \, (2, \, 8), \, (3, \, 7), \, (4 \, , \, \_\_)
+\end{align*}
+\begin{tikzpicture}[overlay]
+  \draw [fill=blue, opacity=0.25] (2.6, 1) rectangle (3, 1.6);
+  \draw [fill=blue, opacity=0.25] (4.1, 1) rectangle (4.5, 1.6);
+  \draw [fill=blue, opacity=0.25] (5.5, 1) rectangle (6, 1.6);
+  \draw [fill=blue, opacity=0.25] (7, 1) rectangle (7.5, 1.6);
+\end{tikzpicture}
+\pause
+Queda pendiente encontrar el segundo valor de la pareja de números.
+\end{frame}
+\begin{frame}
+\frametitle{Segundo valor de la pareja de números}
+El segundo valor de la pareja de números:
+\begin{align*}
+(1, \, 9), \, (2, \, 8), \, (3, \, 7), \, (\_\_ \, , \, \_\_)
+\end{align*}
+\begin{tikzpicture}[overlay]
+  \draw [fill=blue, opacity=0.25] (3.1, 1) rectangle (3.5, 1.6);
+  \draw [fill=blue, opacity=0.25] (4.6, 1) rectangle (5.1, 1.6);
+  \draw [fill=blue, opacity=0.25] (6, 1) rectangle (6.6, 1.6);
+\end{tikzpicture}
+\pause
+Encontramos que la sucesión \color{red}{va disminuyendo en una unidad}.
+\end{frame}
+\begin{frame}
+\frametitle{Valor encontrado}
+Concluimos que el valor del segundo número es:
+\begin{align*}
+(1, \, 9), \, (2, \, 8), \, (3, \, 7), \, (4 \, , \, 6)
+\end{align*}
+\begin{tikzpicture}[overlay]
+  \draw [fill=blue, opacity=0.25] (3.3, 1) rectangle (3.7, 1.6);
+  \draw [fill=blue, opacity=0.25] (4.6, 1) rectangle (5.1, 1.6);
+  \draw [fill=blue, opacity=0.25] (6, 1) rectangle (6.6, 1.6);
+  \draw [fill=blue, opacity=0.25] (7.6, 1) rectangle (8.1, 1.6);
+\end{tikzpicture}
+\pause
+Entonces ya tenemos la pareja de valores en la sucesión: $(4, 6)$.
+\end{frame}
+\begin{frame}
+\frametitle{Solución al ejercicio}
+El inciso correcto es:
+\begin{align*}
+1, \, 9, \, 2, \, 8, \, 3, \, 7, \, \_\_ \, , \, \_\_
+\end{align*}
+\begin{choices}
+\choice $8, \, 2$ \\
+\choice $2, \, 9$ \\
+\choice $8, \, 10$ \\
+\choice $6, \, 4$ \\
+\choice $4, \, 6$ \\
+\end{choices}
+\begin{tikzpicture}[overlay]
+  \node [text = cadmiumgreen] at (1, 1) {\cmark};
+\end{tikzpicture}
+\end{frame}
+
+\subsection{Ejercicio 3}
+
+\begin{frame}
+\frametitle{Ejercicio 3}
+Ahora resuelve: De las parejas de números propuestas, elige la que corresponda en la sucesión:
+\begin{align*}
+30, \, 24, \, 19, \, 15, \, 12, \, \_\_ , \, \_\_
+\end{align*}
+\begin{choices}
+\choice $10, \, 9$ \\
+\choice $10, \, 8$ \\
+\choice $10, \, 7$ \\
+\choice $9, \, 8$ \\
+\choice $9, \, 7$ \\
+\end{choices} 
+\end{frame}
+\begin{frame}
+\frametitle{Características de la sucesión}
+\begin{align*}
+30, \, 24, \, 19, \, 15, \, 12, \, \_\_ , \, \_\_
+\end{align*}
+\setbeamercolor{item projected}{bg=blue!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item Tenemos números enteros.
+\item Hay una sucesión decreciente en cada elemento.
+\end{enumerate}
+\pause
+Una vez que revisamos las características de la sucesión, hay que ocupar la artimética para determinar el patrón de la sucesión.
+\end{frame}
+\begin{frame}
+\frametitle{Aritmética en los elementos}
+Considerando como punto de partida el primer elemento de la sucesión: $30$, el siguiente elemento \emph{es menor}: $6$.
+\\
+\bigskip
+\pause
+Veamos cuántas unidades es menor el segundo elemento.
+\end{frame}
+\begin{frame}
+\frametitle{Aritmética en los elementos}
+Diferencia entre el primer y segundo elemento de la sucesión
+\begin{align*}
+30 - 24 = 6
+\end{align*}
+\pause
+Tomamos el segundo elemento y le restamos el tercero:
+\begin{align*}
+24 - 19 = 5
+\end{align*}
+\pause
+Seguimos así con los demás elementos de la sucesión.  
+\end{frame}
+\begin{frame}
+\frametitle{Aritmética en los elementos}
+\begin{eqnarray*}
+30 - 24 &=& 6 \\[0.5em] 
+24 - 19 &=& 5 \\[0.5em] \pause
+19 - 15 &=& 4 \\[0.5em] \pause
+15 - 12 &=& 3
+\end{eqnarray*}
+\begin{tikzpicture}[overlay]
+  \draw [fill=gray, opacity=0.25](6.5, 1) rectangle (7, 5);
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\frametitle{Secuencia descendente}
+Hemos identificado una secuencia descendente de una unidad en los términos.
+\\
+\bigskip
+\pause
+Por lo que hay que utilizar esa secuencia para calcular los valores pendientes.
+\end{frame}
+\begin{frame}
+\frametitle{Completando la secuncia}
+Tenemos entonces que:
+\pause
+\begin{eqnarray*}
+12 - 2 &=& 10 \\[0.5em] \pause
+10 - 1 &=& 9
+\end{eqnarray*}
+\pause
+Entonces los siguientes elementos de la sucesión son: $10, 9$
+\end{frame}
+\begin{frame}
+\frametitle{Respuesta correcta}
+Entonces la respuesta correcta es $A)$
+\begin{align*}
+30, \, 24, \, 19, \, 15, \, 12, \, 10 , \, 9
+\end{align*}
+\begin{choices}
+\choice $10, \, 9$ \\
+\choice $10, \, 8$ \\
+\choice $10, \, 7$ \\
+\choice $9, \, 8$ \\
+\choice $9, \, 7$ \\
+\end{choices}
+\begin{tikzpicture}[overlay]
+  \node [text = cadmiumgreen] at (0.9, 4.3) {\cmark};
+\end{tikzpicture}
+\end{frame}
+
+\subsection{Ejercicio 4}
+
+\begin{frame}
+\frametitle{Ejercicio 4}
+De las parejas de números propuestas, elige la que corresponda en la sucesión:
+\begin{align*}
+\dfrac{1}{22}, \, \dfrac{1}{18}, \, \_\_ , \, \_\_, \, \dfrac{1}{6}, \, \dfrac{1}{2}
+\end{align*}
+\begin{choices}
+\choice $\frac{1}{4}, \, \frac{1}{12}$ \\
+\choice $\frac{1}{9}, \, \frac{1}{3}$ \\
+\choice $\frac{1}{12}, \, \frac{1}{10}$ \\
+\choice $\frac{1}{14}, \, \frac{1}{10}$ \\
+\choice $\frac{1}{10}, \, \frac{1}{8}$ \\
+\end{choices} 
+\end{frame}
+
+\end{document}

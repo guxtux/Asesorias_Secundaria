@@ -1,0 +1,37 @@
+\documentclass[12pt]{beamer}
+\usepackage{../Estilos/BeamerMAF}
+\input{../Preambulos/preambulo_Beamer_Warsaw_seahorse}
+\makeatletter
+% \setbeamercolor{section in foot}{bg=gray!30, fg=black!90!orange}
+% \setbeamercolor{subsection in foot}{bg=blue!30!yellow, fg=red}
+% \setbeamercolor{date in foot}{bg=black, fg=white}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
+    \usebeamerfont{section in foot} \insertsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in foot}%
+    \usebeamerfont{subsection in foot}  \insertsubsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot} \insertshortdate{} \hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\date{5 de marzo de 2021}
+\title{Clase muestra}
+\subtitle{Asesoría}
+\begin{document}
+\maketitle
+\fontsize{14}{14}\selectfont
+\spanishdecimal{.}
+\section*{Contenido}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideallsubsections]}
+\section{Introducción}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideothersubsections]}
+
+\end{document}

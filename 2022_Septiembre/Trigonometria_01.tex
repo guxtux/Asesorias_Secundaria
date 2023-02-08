@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{anyfontsize}
+\usepackage{anysize}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usetikzlibrary{arrows.meta, positioning}
+\setlength{\parskip}{1em}
+\spanishdecimal{.}
+%\renewcommand{\baselinestretch}{1.5}
+%\marginsize{1.5cm}{1.5cm}{1cm}{2cm}
+%\author{M. en C. Gustavo Contreras Mayén. \texttt{curso.fisica.comp@gmail.com}\\
+%M. en C. Abraham Lima Buendía. \texttt{abraham3081@ciencias.unam.mx}}
+\title{\vspace*{-2cm}Funciones trigonométricas \vspace{-5ex}}
+\date{ }
+\begin{document}
+\maketitle
+Consideremos el triángulo rectángulo $ABC$. Las llamadas funciones o razones trigonométricas del ángulo agudo $B$ son las siguientes:
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw (0, 0) -- (5, 0) -- (5, 4) -- cycle;
+	\node at (-0.4, 0) {$B$};
+	\node at (2.5, -0.4) {$c$};
+	\node at (5.4, 0) {$A$};
+	\node at (5.4, 2) {$b$};
+	\node at (5.4, 4) {$C$};
+	\node at (2.5, 2.4) {$a$};
+\end{tikzpicture}
+\end{figure}
+
+\noindent
+\textbf{Seno}: Es la razón entre el cateto opuesto y la hipotenusa. El seno del ángulo agudo $B$ se escribe $\text{sen} B$. Se calcula como:
+\begin{align*}
+\text{sen} B = \dfrac{b}{a}
+\end{align*}
+\textbf{Coseno}: Es la razón entre el cateto adyacente y la hipotenusa. El coseno del ángulo agudo $B$ se escribe $\cos B$. Se calcula como:
+\begin{align*}
+\cos B = \dfrac{c}{a}
+\end{align*}
+\textbf{Tangente}: Es la razón entre el cateto opuesto y cateto adyacente. Se abrevia $\tan B$. Se calcula como:
+\begin{align*}
+\tan B = \dfrac{b}{a}
+\end{align*}
+\textbf{Ejercicio 1:} Dado un triángulo rectángulo cuyos catetos miden $a = 6$ y $b = 8$ cm, calcula las funciones trigonométricas del ángulo agudo mayor.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw (0, 0) -- (4, 0) node [below, midway] {$a$};
+	\draw (4, 0) -- (4, 5) node [right, midway] {$b$};
+	\draw (4, 5) -- (0, 0) node [above=0.5, midway] {$c$};
+	\node at (-0.4, 0) {$B$};
+	\node at (4.4, 0) {$A$};
+	\node at (4.4, 5.4) {$C$};
+
+\end{tikzpicture}
+\end{figure}
+\noindent
+\textbf{Solución: }
+\begin{enumerate}
+\item  Por medio del Teorema de Pitágoras, calculamos la hipotenusa $c$:
+\begin{align*}
+c = \hspace{10cm}
+\end{align*}
+\item El ángulo agudo mayor es: \rule{1.5cm}{0.7pt}, por que: \rule{5cm}{0.7pt}
+\item 
+Las funciones trigonométricas del ángulo \rule{1.5cm}{0.7pt} son:
+\begin{align*}
+\text{sen} \quad = \hspace{3cm} \cos \quad = \hspace{3cm} \tan \quad = 
+\end{align*}
+\item ¿Cuánto mide en grados el ángulo \rule{1.5cm}{0.7pt}? R: \rule{1.5cm}{0.7pt}
+\item 
+¿Cuánto mide en grados el otro ángulo agudo \rule{1.5cm}{0.7pt}? R: \rule{1.5cm}{0.7pt}
+\end{enumerate}
+\textbf{Ejercicio 2: } En la figura se muestra un vector, calcula la magnitud y la dirección del mismo (el ángulo $\alpha$).
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw (0, 0) -- (4, 0);
+	\draw (0, 0) -- (0, 5);
+
+	\foreach \x in {1, 2, 3}
+	{	\draw (\x, -0.2) -- (\x, 0.2);
+		\node at (\x, -0.4) {\x};
+	}
+
+	\foreach \y in {1, 2, 3, 4}
+	{	\draw (-0.2, \y) -- (0.2, \y);
+		\node at (-0.4, \y) {\y};
+	}
+
+	\draw [-stealth, thick] (0, 0) -- (3, 4);
+	\draw (0.5, 0) arc (0:30:1);
+	\node at (0.7, 0.3) {$\alpha$};
+\end{tikzpicture}
+\end{figure}
+\textbf{Operaciones:}
+\\[1em]
+Magnitud: \hspace{7cm} Dirección: 
+\newpage
+\textbf{Ejercicio 3: } En la figura se muestra un vector, calcula la magnitud y la dirección del mismo (el ángulo $\beta$).
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw (0, 0) -- (3, 0);
+	\draw (0, 0) -- (0, -4);
+
+	\foreach \x in {1, 2}
+	{	\draw (\x, -0.2) -- (\x, 0.2);
+		\node at (\x, 0.4) {\x};
+	}
+
+	\foreach \y in {1, 2, 3}
+	{	\draw (-0.2, -\y) -- (0.2, -\y);
+		\node at (-0.4, -\y) {-\y};
+	}
+
+	\draw [-stealth, thick] (0, 0) -- (2, -3);
+	\draw (0.3, 0) arc (0:320:0.4);
+	\node at (-0.7, 0.3) {$\beta$};
+\end{tikzpicture}
+\end{figure}
+\textbf{Operaciones:}
+\\[1em]
+Magnitud: \hspace{7cm} Dirección: 
+\vspace{4cm}
+\\[1em]
+\textbf{Ejercicio 4: } Marca los siguientes puntos, en un sistema coordenado e identifica el cuadrante al que pertenecen.
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c c }
+ & Cuadrante & & Cuadrante \\
+$A (0, 0)$ & \rule{1cm}{0.6pt} & $K (6, 0)$ & \rule{1cm}{0.6pt}  \\
+$B (4, 0)$ & \rule{1cm}{0.6pt} & $L (-4, -3)$ & \rule{1cm}{0.6pt} \\
+$C (3, 2)$ & \rule{1cm}{0.6pt} & $M (-3, -3)$ & \rule{1cm}{0.6pt} \\
+$D (7, 2)$ & \rule{1cm}{0.6pt} & $N (-1, -3)$ & \rule{1cm}{0.6pt} \\
+$E (6, 8)$ & \rule{1cm}{0.6pt} & $O (0, -3)$ & \rule{1cm}{0.6pt} \\
+$F (7, 6)$ & \rule{1cm}{0.6pt} & $P (-7, -5)$ & \rule{1cm}{0.6pt} \\
+$G (0, 5)$ & \rule{1cm}{0.6pt} & $Q (2, -2)$ & \rule{1cm}{0.6pt} \\
+$H (-3, -3)$ & \rule{1cm}{0.6pt} & $R (2, -4)$ & \rule{1cm}{0.6pt} \\
+$I (-3, 1)$ & \rule{1cm}{0.6pt} & $S (5, -4)$ & \rule{1cm}{0.6pt} \\
+$J (-5, 3)$ & \rule{1cm}{0.6pt} & $T (8, -2)$ & \rule{1cm}{0.6pt} \\
+\end{tabular}
+\end{table}
+
+\newpage
+\textbf{Ejercicio 5: } Se tienen cuatro vectores:
+\begin{enumerate}
+\item \textbf{V1} = 3 unidades de magnitud, $\theta = \ang{0}$
+\item \textbf{V2} = 4 unidades de magnitud, $\theta = \ang{30}$
+\item \textbf{V3} = 2 unidades de magnitud, $\theta = \ang{45}$
+\item \textbf{V4} = 3 unidades de magnitud, $\theta = \ang{90}$
+\end{enumerate}
+\textbf{¿Cuál es la magnitud y dirección del vector resultante?}. Resuelve el ejercicio con los métodos:
+\begin{enumerate}
+\item Gráfico.
+\item Analítico.
+\item Por descomposición de componentes.
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\draw[style=help lines, thin] (0,0) grid[step=1cm] (9,7);
+	\end{tikzpicture}
+\end{figure}
+\end{document}
