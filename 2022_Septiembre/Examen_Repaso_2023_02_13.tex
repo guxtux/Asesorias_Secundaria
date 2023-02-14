@@ -1,0 +1,216 @@
+\documentclass[14pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[autostyle,spanish=mexican]{csquotes}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[per-mode=symbol]{siunitx}
+\usepackage{gensymb}
+\usepackage{multicol}
+\usepackage{chemformula}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, 
+     bottom=2.00cm]{geometry}
+
+\usepackage[fontsize=12pt]{scrextend}
+\usepackage{anyfontsize}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+
+\renewcommand{\questionlabel}{\thequestion)}
+\decimalpoint
+\sisetup{bracket-numbers = false}
+
+
+\title{\vspace*{-2cm}Examen de Repaso\vspace{-5ex}}
+\date{\today}
+
+\footer{}{\thepage}{}
+
+\begin{document}
+\maketitle
+
+\section{Matemáticas.}
+
+\begin{questions}
+    \question ¿Qué es el máximo común divisor (m.c.d.) de dos o más números?
+    \vspace{2em}
+    \question ¿Qué es el mínimo común múltiplo (m.c.m.) de dos o más números?
+    \vspace{2em}
+    \question ¿Cuál es el m.c.d. de $18$ y $24$?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $6$
+        \choice $3$
+        \choice $12$
+        \choice $4$
+    \end{oneparchoices}
+    \question ¿Cuál es el m.c.d. de $60$ $100$ y $120$?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $10$
+        \choice $24$
+        \choice $20$
+        \choice $30$
+    \end{oneparchoices}
+    \question ¿Cuál es el m.c.d. de $15$ y $30$?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $3$
+        \choice $5$
+        \choice $15$
+        \choice $30$
+    \end{oneparchoices}
+    \question ¿Cuál es el m.c.d. de $24$, $36$ y $72$?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $24$
+        \choice $36$
+        \choice $18$
+        \choice $12$
+    \end{oneparchoices}
+    \question ¿Cuál es el m.c.m. de $9$ y $6$?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $12$
+        \choice $15$
+        \choice $18$
+        \choice $54$
+    \end{oneparchoices}
+    \question ¿Cuál es el m.c.m. de $10$, $12$ y $15$?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $60$
+        \choice $80$
+        \choice $100$
+        \choice $120$
+    \end{oneparchoices}
+    \question ¿Cuál es el m.c.d. de los siguientes monomios: $a^{2} x^{2}$ y $3 a^{3} b x$? \\[0.5em]
+    R = \rule{3cm}{0.1mm}
+    \question ¿Cuál es el m.c.d. de los siguientes monomios: $36 a^{2} b^{4}$, $48 a^{3} b^{3} c$ y $60 a^{4} b^{3} m$? \\[0.5em]
+    R = \rule{3cm}{0.1mm}
+    \question ¿Cuál es el m.c.m de los siguientes monomios: $a^{2} x^{2}$ y $a^{3} x$? \\[0.5em]
+    R = \rule{3cm}{0.1mm}
+    \question ¿Cuál es el m.c.m de los siguientes monomios: $8 a b^{2} c$ y $12 a^{3} b^{2}$? \\[0.5em]
+    R = \rule{3cm}{0.1mm}
+\end{questions}
+
+\newpage
+
+\section{Física.}
+
+\begin{questions}
+    \question ¿Cuáles de las siguientes son características de un vector?
+    \\[0.5em]
+    I. Intensidad. \\
+    II. Dirección. \\
+    III. Sentido. \\
+    IV. Polaridad. \\
+    V. Magnitud. \\[0.5em]
+    \begin{oneparchoices}
+        \choice I, II, y III.
+        \choice II, III y IV.
+        \choice II, III y V.
+        \choice I, IV y V.
+    \end{oneparchoices}
+    \question Cuando sumamos o restamos vectores, ¿cuál es el nombre del vector que se obtiene?
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice Complemento.
+        \choice Suplemento.
+        \choice Resultante.
+        \choice Sobrante.
+    \end{oneparchoices}
+    \question Considera el siguiente vector:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw [-stealth] (0, 0) -- (3, 0) node [above, pos=1.1] {$x$};
+            \draw [-stealth] (0, 0) -- (0, 3) node [left, pos=1.1] {$y$};
+            \draw [-stealth, thick] (0, 0) -- (2, 2) node [midway, above] {$a$};
+            \draw (0.5, 0) arc(0:45:0.5) node [right] {$\alpha$};
+        \end{tikzpicture}
+    \end{figure}
+    ¿Cómo quedan definidas las componente del vector $\va{a}$ en la dirección $x$ ($a_{x}$) y en dirección $y$ ($a_{y}$)?
+    \begin{choices}
+        \choice $a_{x} = a \, \cos \alpha$, $a_{y} = a \, \text{sen} \alpha$
+        \choice $a_{x} = a \, \text{sen} \alpha$, $a_{y} = a \, \cos \alpha$
+        \choice $a_{x} = a \, \text{sen} \alpha$, $a_{y} = a \, \tan \alpha$
+        \choice $a_{x} = a \, \tan \alpha$, $a_{y} = a \, \cos \alpha$
+    \end{choices}
+    \question Considera la suma de los siguientes vectores $\va{a}$ y $\va{b}$:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw [very thin] (0, 0) grid (3, 3);
+            \draw [-stealth] (0, 0) -- (3, 0) node [above, pos=1.1] {$x$};
+            \draw [-stealth] (0, 0) -- (0, 3) node [left, pos=1.1] {$y$};
+            \draw [-stealth, thick] (0, 0) -- (2, 0) node [midway, below] {$\va{a}$};
+            \draw [-stealth, thick] (2, 0) -- (2, 2) node [midway, right] {$\va{b}$};
+        \end{tikzpicture}
+        \caption{Cada cuadro en la rejilla mide $1$ unidad.}
+    \end{figure}
+    ¿Cuál es la magnitud $M$ y dirección $\alpha$ del vector resultante?
+    \begin{choices}
+        \choice $M = 2 \sqrt{2}$, \quad $\theta = \ang{90}$
+        \choice $M = 8 \sqrt{2}$, \quad $\theta = \ang{225}$
+        \choice $M = 2 \sqrt{2}$, \quad $\theta = \ang{225}$
+        \choice $M = \dfrac{2}{\sqrt{2}}$, \quad $\theta = \ang{225}$
+    \end{choices}
+    \question Sabemos que la velocidad se expresa como el desplazamiento de un objeto en un tiempo determinado. 
+    \begin{parts}
+        \part Si la velocidad del tren bala es de $\SI{603}{\kilo\meter\per\hour}$. \\[0.5em]
+        ¿Qué distancia ha recorrido en $\SI{1}{\minute}$? R = \rule{3cm}{0.1mm}
+        \part El corredor jamaicano Usain Bolt estableció el récord de velocidad en la carrera de $\SI{100}{\meter}$ con un tiempo de $\SI{9.58}{\second}$. \\[0.5em]
+        ¿Cuál fue su velocidad expresada en $\SI{}{\kilo\meter\per\hour}$? R = \rule{3cm}{0.1mm}
+        \part La moto Ducatti Superleggera V4 corre a un máximo de $200$ millas por hora. \\[0.5em]
+        A la máxima velocidad, ¿cuánto tiempo (en segundos) tarda en recorrer $\SI{350}{\meter}$? \\[0.5em]
+        R = \rule{3cm}{0.1mm}
+    \end{parts}
+    \question ¿Cuál es el área (en metros cuadrados) de una cancha de futbol americano que mide $120$ yardas de largo por $53.33$ yardas de ancho? \\[0.5em]
+    (Recuerda que $1$ yarda = $36$ pulgadas, y $1$ pulgada = $\SI{2.54}{\centi\meter}$)
+    \\[0.5em]
+    \begin{oneparchoices}
+        \choice $\SI{5400.2}{\square\meter}$
+        \choice $\SI{5363.6}{\square\meter}$
+        \choice $\SI{5636.3}{\square\meter}$
+        \choice Otro valor: \rule{3cm}{0.1mm}
+    \end{oneparchoices}
+    \question Relaciona las columnas indicando para cada propiedad, el tipo de materia a la que se relaciona: sólida, líquida o gaseosa:
+    \begin{table}[H]
+        \renewcommand{\arraystretch}{1.2}
+        \centering
+        \begin{tabular}{l | l}
+            \multicolumn{1}{c}{\textbf{Propiedad}} & \multicolumn{1}{|c}{\textbf{Tipo de materia}} \\ \hline
+            Compresibilidad & \\ \hline
+            Ductilidad & \\ \hline
+            Punto de congelación & \\ \hline
+            Punto de fusión & \\ \hline
+            Dureza & \\ \hline
+            Licuefacción & \\ \hline
+            Punto de ebullición & \\ \hline
+            Presión & \\ \hline
+            Maleabilidad & \\ \hline
+            Compresibilidad & \\ \hline
+            Condensación & \\ \hline
+            Viscosidad & \\ \hline
+        \end{tabular}
+    \end{table}
+    \newpage
+    \question Completa la siguiente figura indicando los cambios de estado en la materia:
+    \\[3em]
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw (0, 0) rectangle (2, 1) node [pos=0.5] {Sólido};
+            \draw (4, 0) rectangle (6, 1) node [pos=0.5] {Líquido};
+            \draw (8, 0) rectangle (10, 1) node [pos=0.5] {Gas};
+        \end{tikzpicture}
+    \end{figure}
+\end{questions}
+
+
+\end{document}
