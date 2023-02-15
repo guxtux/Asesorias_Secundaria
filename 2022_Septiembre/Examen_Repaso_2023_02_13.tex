@@ -7,6 +7,7 @@
 \usepackage{amsthm}
 \usepackage{physics}
 \usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
 \usepackage{float}
 \usepackage[per-mode=symbol]{siunitx}
 \usepackage{gensymb}
@@ -36,6 +37,25 @@
 \section{Matemáticas.}
 
 \begin{questions}
+    \question Calcula el perímetro y el área de los siguientes polígonos:
+        \begin{parts}
+            \part
+            \begin{tikzpicture}
+                \node[regular polygon, draw, regular polygon sides = 6, minimum size=3cm] (p) at (0,0) {};
+                \draw [fill] (0, 0) circle (1pt);
+                \draw (p.south) -- (p.center) node [midway, right] {$\SI{3}{\centi\meter}$};
+                \node [below of=p, node distance=1.5cm] (etiqueta) {$\SI{2}{\centi\meter}$};
+            \end{tikzpicture}
+            Perímetro = \rule{3cm}{0.1mm} \hspace{1cm} Área = \rule{3cm}{0.1mm} \hspace{2cm}
+            \part
+            \begin{tikzpicture}
+                \node[regular polygon, draw, regular polygon sides = 8, minimum size=3cm] (p) at (0,0) {};
+                \draw [fill] (0, 0) circle (1pt);
+                \draw (p.south) -- (p.center) node [midway, right] {$\SI{5}{\centi\meter}$};
+                \node [below of=p, node distance=1.6cm] (etiqueta) {$\SI{4}{\centi\meter}$};
+            \end{tikzpicture}
+            Perímetro = \rule{3cm}{0.1mm} \hspace{1cm} Área = \rule{3cm}{0.1mm} \hspace{2cm}
+        \end{parts}
     \question ¿Qué es el máximo común divisor (m.c.d.) de dos o más números?
     \vspace{2em}
     \question ¿Qué es el mínimo común múltiplo (m.c.m.) de dos o más números?
@@ -48,14 +68,6 @@
         \choice $12$
         \choice $4$
     \end{oneparchoices}
-    \question ¿Cuál es el m.c.d. de $60$ $100$ y $120$?
-    \\[0.5em]
-    \begin{oneparchoices}
-        \choice $10$
-        \choice $24$
-        \choice $20$
-        \choice $30$
-    \end{oneparchoices}
     \question ¿Cuál es el m.c.d. de $15$ y $30$?
     \\[0.5em]
     \begin{oneparchoices}
@@ -63,14 +75,6 @@
         \choice $5$
         \choice $15$
         \choice $30$
-    \end{oneparchoices}
-    \question ¿Cuál es el m.c.d. de $24$, $36$ y $72$?
-    \\[0.5em]
-    \begin{oneparchoices}
-        \choice $24$
-        \choice $36$
-        \choice $18$
-        \choice $12$
     \end{oneparchoices}
     \question ¿Cuál es el m.c.m. de $9$ y $6$?
     \\[0.5em]
@@ -90,11 +94,7 @@
     \end{oneparchoices}
     \question ¿Cuál es el m.c.d. de los siguientes monomios: $a^{2} x^{2}$ y $3 a^{3} b x$? \\[0.5em]
     R = \rule{3cm}{0.1mm}
-    \question ¿Cuál es el m.c.d. de los siguientes monomios: $36 a^{2} b^{4}$, $48 a^{3} b^{3} c$ y $60 a^{4} b^{3} m$? \\[0.5em]
-    R = \rule{3cm}{0.1mm}
     \question ¿Cuál es el m.c.m de los siguientes monomios: $a^{2} x^{2}$ y $a^{3} x$? \\[0.5em]
-    R = \rule{3cm}{0.1mm}
-    \question ¿Cuál es el m.c.m de los siguientes monomios: $8 a b^{2} c$ y $12 a^{3} b^{2}$? \\[0.5em]
     R = \rule{3cm}{0.1mm}
 \end{questions}
 
@@ -201,7 +201,6 @@
     \end{table}
     \newpage
     \question Completa la siguiente figura indicando los cambios de estado en la materia:
-    \\[3em]
     \begin{figure}[H]
         \centering
         \begin{tikzpicture}
