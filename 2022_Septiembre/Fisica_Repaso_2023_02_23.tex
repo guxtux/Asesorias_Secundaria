@@ -1,0 +1,376 @@
+\documentclass[14pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-lcroman]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[per-mode=symbol]{siunitx}
+\usepackage{gensymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, 
+     bottom=2.00cm]{geometry}
+
+%\renewcommand{\questionlabel}{\thequestion)}
+\decimalpoint
+\sisetup{bracket-numbers = false}
+\DeclareSIUnit{\nothing}{\relax}
+
+\title{\vspace*{-2cm} Cinemática \vspace{-5ex}}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{CINEMÁTICA.}
+
+\noindent
+Es la parte de la mecánica que estudia el movimiento de los cuerpos.
+\\[0.5em]
+\noindent
+Definiciones importantes:
+\begin{enumerate}
+\item \textbf{Movimiento:} Es el cambio de lugar que experimenta un cuerpo dentro de un espacio determinado.
+\item \textbf{Sistema de referencia:} Sistema de elementos que sirve para fijar la posición de un cuerpo en movimiento.
+\item \textbf{Posición:} Es el lugar físico en el que se encuentra un cuerpo dentro de un espacio determinado.
+\item \textbf{Desplazamiento:} Es un cambio de lugar sin importar el camino seguido o el tiempo empleado, tiene una relación estrecha con el movimiento de un cuerpo.
+\item \textbf{Trayectoria:} Es la línea que une las diferentes posiciones que a medida que pasa el tiempo va ocupando un punto en el espacio o, de otra forma, es el camino que sigue el objeto dentro de un movimiento.
+\item \textbf{Velocidad:} Distancia que recorre un móvil representada en cada unidad de tiempo.
+\item \textbf{Velocidad final:} Es el último instante o momento de la distancia recorrida en el tiempo.
+\item \textbf{Velocidad media:} Promedio de la suma de todas las distancias y tiempos recorridos.
+\end{enumerate}
+
+\newpage
+
+\subsection{Velocidad media.}
+
+La expresión para calcular la velocidad media de un objeto, se debe de sumar las distancias recoridas por el mismo, estando todas en las mismas unidades, para luego sumar el intervalo de tiempo en el que se recorrió cada distancia, para luego dividir la suma de las distancias entre la suma de los tiempos.
+\begin{align*}
+v_{m} = \dfrac{\Sigma d}{\Sigma t}
+\end{align*}
+donde:
+\begin{enumerate}
+\item $v_{m} $ velocidad media $\SI{}{\meter\per\second}$
+\item $\Sigma d$ es la distancia total recorrida en $\SI{}{\meter}$
+\item $\Sigma t$ es el tiempo total en $\SI{}{\second}$
+\end{enumerate}
+
+\textbf{Ejemplo. } Calcular la distancia final y velocidad media de un automóvil que recorrió $\SI{1840}{\kilo\meter}$ de Ensenada a Querétaro, en donde la primera distancia recorrida de $\SI{450}{\kilo\meter}$ la realizó en $\SI{5}{\hour}$, la segunda en $\SI{4}{\hour}$ en una distancia de $\SI{280}{\kilo\meter}$, la tercera de $\SI{270}{\kilo\meter}$ en $\SI{4}{\hour}$, la cuarta en $\SI{5}{\hour}$ en $\SI{400}{\kilo\meter}$ y la última distancia en $\SI{6}{\hour}$.
+
+Primero determinamos la distancia final:
+\begin{align*}
+d_{f} = \SI{1840}{\kilo\meter} - (\SI{450}{\kilo\meter} + \SI{280}{\kilo\meter} + \SI{270}{\kilo\meter} + \SI{400}{\kilo\meter}) = \SI{440}{\kilo\meter}
+\end{align*}
+Ahora sumamos los tiempos realizados y calculamos la velocidad promedio.
+\begin{align*}
+t_{f} = \SI{5}{\hour} + \SI{4}{\hour} + \SI{4}{\hour} + \SI{5}{\hour} + \SI{6}{\hour} = \SI{24}{\hour}
+\end{align*}
+Por lo que la velocidad media es:
+\begin{align*}
+v_{m} =  \dfrac{\Sigma d}{\Sigma t} = \dfrac{\SI{1840}{\kilo\meter}}{\SI{24}{\hour}} = \SI{76.66}{\kilo\meter\per\hour}
+\end{align*}
+
+\section{Tipos de movimiento.}
+
+Existen diferentes tipos entre los que están los siguientes:
+
+\subsection{Movimiento rectilíneo uniforme.}
+
+Es aquel que lleva a cabo un móvil en línea recta y se dice que es uniforme cuando recorre distancias iguales en tiempos iguales.
+\par
+La ecuación del movimiento rectilíneo uniforme \textbf{MRU} es:
+\begin{align*}
+v = \dfrac{d}{t}
+\end{align*}
+donde:
+\begin{enumerate}
+\item $v$ es la distancia $(\SI{}{\meter\per\second})$
+\item $d$ es la distancia recorrida $\SI{}{\meter}$
+\item $t$ es el tiempo $\SI{}{\second}$.
+\end{enumerate}
+
+\noindent
+\textbf{Ejemplos: }
+\begin{enumerate}[label=\roman*)]
+\item  Calcular la distancia que recorre un tren que lleva una velocidad de $\SI{45}{\kilo\meter\per\hour}$ en $\SI{45}{\minute}$.
+\\[0.5em]
+\noindent
+Ocupando la expresión del MRU, teenmos que:
+\begin{align*}
+d = v \, t = (\SI{45}{\kilo\meter\per\hour})(\SI{0.75}{\hour}) = \SI{33.75}{\kilo\meter}
+\end{align*}
+\item Un automóvil recorrió $\SI{450}{\kilo\meter}$ en $\SI{5}{\hour}$ para ir de la Ciudad de México a la Playa de Acapulco. ¿Cuál fue la velocidad media del recorrido?
+\\[0.5em]
+Se recomienda anotar los datos que tenemos disponibles: $d = \SI{450}{\kilo\meter}$ y $\SI{0.75}{\hour}$, así de la expresión para el \textbf{MRU}:
+\begin{align*}
+v = \dfrac{d}{t} = \dfrac{\SI{450}{\kilo\meter}}{\SI{0.75}{\hour}} = \SI{90}{\kilo\meter\per\hour}
+\end{align*}
+\item Un venado se mueve sobre una carretera recta con una velocidad de $\SI{72}{\kilo\meter}$, durante $\SI{5}{\minute}$. ¿Qué distancia recorre en este tiempo?
+\\[0.5em]
+En este ejercicio tenemos que hacer las respectivas conversiones para que las unidades sean homogéneas:
+\begin{align*}
+\text{Tiempo:} \hspace{1cm} &\SI{5}{\minute} \cdot \dfrac{\SI{60}{\second}}{\SI{1}{\minute}} = \SI{300}{\second} \\[0.5em]
+\text{Velocidad:} \hspace{1cm} &\SI{72}{\kilo\meter\per\hour} \cdot \dfrac{\SI{1}{\hour}}{\SI{3600}{\second}} \cdot \dfrac{\SI{1000}{\meter}}{\SI{1}{\kilo\meter}} = \SI{20}{\meter\per\second}
+\end{align*}
+Ocupamos los datos $v = \SI{20}{\meter\per\second}$ y $\SI{300}{\second}$ en la expresión del \textbf{MRU}:
+\begin{align*}
+d = v \, t = (\SI{20}{\meter\per\second})(\SI{300}{\second}) = \SI{6000}{\meter}
+\end{align*}
+
+\end{enumerate}
+
+
+\subsection{Rapidez.}
+
+Es una cantidad escalar de la velocidad en un instante dado o es la velocidad que lleva un móvil u objeto en una trayectoria.
+
+\subsection{Movimiento uniformemente acelerado.}
+
+El movimiento uniformemente acelerado (\textbf{MUA}) es el movimiento que realiza un móvil que varía su velocidad uniformemente, a ese aumento o disminución de la velocidad en cada unidad de tiempo se le conoce como \textbf{aceleración}.
+\par
+Tenemos varias expresiones para el \textbf{MUA}:
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.5}
+\centering
+\begin{tabular}{l | l}
+Fórmula & Aplicación \\ \hline
+$d = v_{i} \, t + \dfrac{1}{2} \, a \, t^{2}$ & distancia \\ \hline
+$d = \dfrac{1}{2} \, a \, t^{2}$ & distancia, con $v_{i} = 0$ \\ \hline
+$a = \dfrac{v_{f} - v_{i}}{t}$ & aceleración \\ \hline
+$v = v_{i} + a \, t$ & velocidad \\ \hline
+\end{tabular}
+\end{table}
+donde:
+\begin{enumerate}[label=\roman*)]
+\item $a$ es la acelaración en $\SI{}{\meter\per\square\second}$
+\item $v_{i}$ es la velocidad inicial ($\SI{}{\meter\per\second}$)
+\item $v_{f}$ es la velocidad final ($\SI{}{\meter\per\second}$)
+\item $v$ es la velocidad ($\SI{}{\meter\per\second}$)
+\item $t$ es el tiempo ($\SI{}{\second}$)
+\item $d$ es la distancia recorrida ($\SI{}{\meter}$)
+\end{enumerate}
+
+\newpage
+
+De la expresión:
+\begin{align*}
+a = \dfrac{v_{f} - v_{i}}{t}
+\end{align*}
+tenemos que:
+\begin{enumerate}
+\item Si la velocidad final es mayor que la velocidad inicial entonces la aceleración es positiva y por lo tanto el móvil acelera.
+\item Si la velocidad final es menor que la velocidad inicial entonces la aceleración es negativa y por lo tanto el móvil desacelera (frena).
+\end{enumerate}
+
+\subsection{Gráficas de los tipos de movimiento.}
+
+\begin{figure}[H]
+     \begin{minipage}{0.4\linewidth}
+          \centering
+          \begin{tikzpicture}[scale=0.85]
+               \draw [-stealth](0, 0) -- (4, 0) node [below, pos=1.1] {tiempo};
+               \draw [-stealth](0, 0) -- (0, 3) node [left, pos=1.1] {distancia};
+               \draw [thick] (0, 0) -- (3, 3) node [above, pos=1] {$P$};
+               \draw [thick] (0, 0) -- (3.4, 2) node [above, pos=1] {$Q$};
+          \end{tikzpicture}
+          \caption{M.R.U.}
+     \end{minipage}
+     \hspace{1cm}
+     \begin{minipage}{0.4\linewidth}
+          \centering
+          \begin{tikzpicture}[scale=0.85]
+               \draw [-stealth](0, 0) -- (4, 0) node [below, pos=1.1] {tiempo};
+               \draw [-stealth](0, 0) -- (0, 3) node [left, pos=1.1] {velocidad};
+               \draw [thick] (0, 2) -- (3.5, 2);
+          \end{tikzpicture}
+          \caption{M.R.U.}
+     \end{minipage}
+\end{figure}
+\begin{figure}[H]
+     \begin{minipage}{0.4\linewidth}
+          \centering
+          \begin{tikzpicture}[scale=0.85]
+               \draw [-stealth](0, 0) -- (4, 0) node [below, pos=1.1] {tiempo};
+               \draw [-stealth](0, 0) -- (0, 3) node [left, pos=1.1] {velocidad};
+               \draw [thick] (0, 0) -- (3, 3) node [above, pos=1] {$R$};
+               \draw [thick] (0, 0) -- (3.4, 2) node [above, pos=1] {$S$};
+          \end{tikzpicture}
+          \caption{M.U.A.}
+     \end{minipage}
+     \hspace{1cm}
+     \begin{minipage}{0.4\linewidth}
+          \centering
+          \begin{tikzpicture}[scale=0.8]
+               \draw [-stealth](0, 0) -- (4, 0) node [below, pos=1.1] {tiempo};
+               \draw [-stealth](0, 0) -- (0, 3) node [left, pos=1.1] {aceleración};
+               \draw [thick] (0, 2) -- (3.5, 2);
+          \end{tikzpicture}
+          \caption{M.U.A.}
+     \end{minipage}
+\end{figure}
+
+\newpage
+
+\noindent
+\textbf{Ejemplos: }
+\begin{enumerate}[label=\roman*)]
+\item Un vehículo se mueve a razón de $\SI{10}{\meter\per\second}$, al transcurrir $\SI{20}{\second}$, su velocidad es de $\SI{40}{\meter\per\second}$. ¿Cuál es su aceleración?
+\\[0.5em]
+\textbf{Datos:} $v_{i} = \SI{10}{\meter\per\second}$, $v_{f} = \SI{40}{\meter\per\second}$, $t = \SI{20}{\second}$. La expresión a utilizar es:
+\begin{align*}
+a = \dfrac{v_{f} - v_{i}}{t}
+\end{align*}
+Por tanto:
+\begin{align*}
+a = \dfrac{\SI{40}{\meter\per\second} - \SI{10}{\meter\per\second}}{\SI{20}{\second}} = \dfrac{\SI{30}{\meter\per\second}}{\SI{20}{\second}} = \SI{1.5}{\meter\per\square\second}
+\end{align*}
+\item Un motociclista parte del reposo y experimenta una aceleración de $\SI{2}{\meter\per\square\second}$. ¿Qué distancia habrá recorrido después de $\SI{5}{\second}$?
+\\[0.5em]
+\textbf{Datos:} $v_{1} = 0$, $a = \SI{2}{\meter\per\square\second}$, $t = \SI{4}{\second}$. La expresión a utilizar es:
+\begin{align*}
+d = v_{i} \, t + \dfrac{1}{2} \, a \, t^{2}
+\end{align*}
+Al sustituir los valores que tenemos:
+\begin{align*}
+d = \dfrac{a \, t^{2}}{2} = \dfrac{\SI{2}{\meter\per\square\second} \, (\SI{4}{\second})^{2}}{2} = \dfrac{\SI{2}{\meter\per\square\second} \, (\SI{16}{\square\second})}{2} = \dfrac{\SI{32}{\meter}}{2} = \SI{16}{\meter}
+\end{align*}
+\item A partir de la siguiente gráfica, realiza una descripción del movimiento y determina la aceleración del móvil.
+\begin{figure}[H]
+     \centering
+     \begin{tikzpicture}
+          \draw [-latex] (0, 0) -- (9, 0) node [below, pos=1.1] {$t \, (\SI{}{\second})$};
+          \draw [-latex](0, 0) -- (0, 3) node [left, pos=1.1] {$V \, (\SI{}{\meter\per\second})$};
+          \draw [thick] (0, 0) -- (2, 2) -- (4.5, 2) -- (8, 0);
+          
+          \draw [dashed] (2, 0) -- (2, 2);
+          \node at (-0.5, 2) {$15$};
+          \draw [dashed] (0, 2) -- (2, 2);
+          \node at (2, -0.5) {$10$};
+          
+          \draw [dashed] (4.5, 2) -- (4.5, 0);
+          \node at (4.5, -0.5) {$25$};
+
+          \node at (8, -0.5) {$40$};
+     \end{tikzpicture}
+\end{figure}
+\begin{enumerate}
+\item El móvil parte del reposo y acelera hasta alcanzar una velocidad de $\SI{15}{\meter\per\second}$.
+\\[0.5em]
+La aceleración en esta parte inicial es:
+\begin{align*}
+a = \dfrac{v_{f} - v_{i}}{t} = \dfrac{\SI{15}{\meter\per\second} - 0}{\SI{10}{\second}} = \SI{1.5}{\meter\per\square\second}
+\end{align*}
+\item En el intervalo de $\SI{10}{\second}$ a los $\SI{15}{\second}$, el móvil se desplaza a una velocidad constante de $\SI{15}{\second}$.
+\begin{align*}
+a = \dfrac{v_{f} - v_{i}}{t} = \dfrac{\SI{15}{\meter\per\second} - \SI{15}{\meter\per\second}}{\SI{15}{\second}} = 0
+\end{align*}
+\item A partir del segundo $25$, empieza a desacelerar y se detiene completamente en el segundo $40$.
+\begin{align*}
+a = \dfrac{v_{f} - v_{i}}{t} = \dfrac{\SI{0}{\meter\per\second} - \SI{15}{\meter\per\second}}{\SI{15}{\second}} = \SI{-1}{\meter\per\square\second}
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Caída libre.}
+
+Todo cuerpo que cae desde el reposo o libremente al vacío, su velocidad inicial valdrá cero y su aceleración será de $g = \SI{9.81}{\meter\per\square\second}$.
+\par
+Si bien hablamos de cuerpos en caída, los cuerpos con movimiento hacia arriba experimentan la misma aceleración en caída libre (en magnitud y en dirección). Esto es, sin importar que la velocidad de la partícula sea hacia arriba o hacia abajo, la dirección de su aceleración bajo la influencia de la gravedad de la Tierra es siempre hacia abajo.
+\par
+Las ecuaciones que nos permiten resolver problemas de caída libre o de lanzamiento vertical consideran lo siguiente:
+\begin{enumerate}
+\item Se marca la dirección de la caída libre como el eje de las ordenadas $y$, tomando como positiva la dirección hacia arriba.
+\item La aceleración constante se indica como $-g$, ya que se eligió la dirección positiva de movimiento hacia arriba, por lo tanto, la aceleración es negativa, pero recuerda que el valor de $g$ es una cantidad positiva.
+\end{enumerate}
+Las ecuaciones son:
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.5}
+\centering
+\begin{tabular}{l | l}
+Fórmula & Aplicación \\ \hline
+$v = v_{i} - g \, t$ & velocidad \\ \hline
+$y = y_{0} + v_{i} \, t - \dfrac{1}{2} \, g \, t^{2}$ & distancia \\ \hline
+$v^{2} = v_{i}^{2} - 2 \, g \, (y - y_{0})$ & velocidad \\ \hline
+$y = y_{0} + \dfrac{1}{2} (v_{i} + v) \, t$ & distancia \\ \hline
+$y = y_{0} + v \, t + \dfrac{1}{2} g \, t^{2}$ & distancia \\ \hline
+\end{tabular}
+\end{table}
+
+\noindent
+\textbf{Ejemplos: }
+\begin{enumerate}[label=\roman*)]
+\item Un niño deja caer una pelota desde una ventana de un edifico y tarda $\SI{3}{\second}$ en llegar al suelo, ¿Cuál es la altura del edificio?.
+\\[0.5em]
+\textbf{Datos:} $y_{0} = \SI{0}{\meter}$, $v_{i} = \SI{0}{\meter\per\second}$, $t = \SI{3}{\second}$, $g = \SI{9.81}{\meter\per\square\second}$
+\\[0.5em]
+De la expresión:
+\begin{align*}
+y = y_{0} + v_{i} \, t - \dfrac{1}{2} \, g \, t^{2}
+\end{align*}
+Podemos conocer la distancia con los datos que se nos proporcionan en el enunciado, así:
+\begin{align*}
+y = - \dfrac{1}{2} \, g \, t^{2} = - \dfrac{(\SI{9.81}{\meter\per\square\second}) (\SI{3}{\second})^{2}}{2} = \dfrac{\SI{88.22}{\meter\square\second\per\square\second}}{2} = \SI{44.14}{\meter}
+\end{align*}
+\item Se deja caer un objeto desde un puente que está a $\SI{80}{\meter}$ del suelo. ¿Con qué velocidad el objeto se estrella contra el suelo?
+\\[0.5em]
+\textbf{Datos:} $y_{0} = -\SI{80}{\meter}$, $v_{i} = \SI{0}{\meter\per\second}$, $g = \SI{9.81}{\meter\per\square\second}$.
+\\[0.5em]
+De la expresión:
+\begin{align*}
+v^{2} = v_{i}^{2} - 2 \, g \, (y - y_{0})
+\end{align*}
+recuperamos el valor de la velocidad, no del cuadrado de la misma, tomemos en cuenta el signo de $y_{0}$, ya que al estar en la dirección negativa de $y$, al multiplicar el signo de $-g$, quedaría un radical positivo:
+\begin{align*}
+v^{2} = 2 \, g \, y_{0} \hspace{0.5cm} \Rightarrow \hspace{0.5cm} v = \sqrt{ 2 \, g \, y_{0}} 
+\end{align*}
+Al sustituir los valores, tendremos que:
+\begin{align*}
+v = \sqrt{2 (\SI{9.81}{\meter\per\square\second}) (\SI{80}{\meter})} = \sqrt{\SI{1569.6}{\square\meter\per\square\second}} = \SI{39.61}{\meter\per\second}
+\end{align*}
+\end{enumerate}
+
+\subsection{Tiro vertical.}
+
+Si un cuerpo se lanza verticalmente hacia arriba, su velocidad disminuirá uniformemente hasta llegar a un punto en le cual queda momentáneamente en reposo y luego regresa nuevamente al punto de partida.
+\par
+Se ha demostrado, que el tiempo que tarda un cuerpo en llegar al punto mas alto de su trayectoria, es igual que tarda en regresar al punto de partida, esto indica que ambos movimientos son iguales y para su estudio se usan las mismas ecuaciones que en la caída libre, solo hay que definir el signo que tendrá $g$.
+
+\noindent
+\textbf{Ejemplos: }
+\begin{enumerate}[label=\roman*)]
+\item Se lanza un proyectil verticalmente hacia arriba con una velocidad de $\SI{60}{\meter\per\second}$. ¿Cuál es la altura máxima que alcanzará?
+\\[0.5em]
+\textbf{Datos:} $y_{0} = \SI{0}{\meter}$, $v_{i} = \SI{60}{\meter\per\second}$, $v_{f} = \SI{0}{\meter\per\second}$, $g = \SI{9.81}{\meter\per\square\second}$.
+\\[0.5em]
+Revisemos que de las expresiones, no tenemos una en donde se recupere directamente la distancia que alcanza el proyectil, pero tenemos la siguiente expresión que involucra las cantidades que si conocemos:
+\begin{align*}
+v^{2} = v_{i}^{2} - 2 \, g \, (y - y_{0})
+\end{align*}
+en donde reconocemos que $v^{2} = \SI{0}{\meter\per\second}$ en el punto donde el proyectil alcanza la altura máxima, por lo tanto:
+\begin{align*}
+0 = v_{i}^{2} - 2 \, g \, (y - y_{0})
+\end{align*}
+de donde despejamos la altura $y$:
+\begin{align*}
+v_{i}^{2} &= 2 \, g \, (y - y_{0}) \\[0.5em]
+y &= \dfrac{v_{i}^{2}}{2 \, g} = \dfrac{(\SI{60}{\meter\per\second})^{2}}{2 (\SI{9.81}{\meter\per\square\second})} = \dfrac{\SI{3600}{\square\meter\per\square\second}}{\SI{19.62}{\meter\per\square\second}} = \SI{183.48}{\meter}
+\end{align*}
+\item Un cuerpo es lanzado verticalmente hacia arriba con una velocidad de $\SI{30}{\meter\per\second}$. ¿Cuánto tiempo le tomará alcanzar su altura máxima?
+\\[0.5em]
+\textbf{Datos:} $y_{0} = \SI{0}{\meter}$, $v_{i} = \SI{30}{\meter\per\second}$, $v_{f} = \SI{0}{\meter\per\second}$, $g = \SI{9.81}{\meter\per\square\second}$.
+\\[0.5em]
+Nos encontramos nuevamente en el caso de que no tenemos una expresión directa para resolver el ejercicio, pero podemos ocupar la siguiente expresión que considera la velocidad inicial, la aceleración debida a la gravedad y el tiempo:
+\begin{align*}
+v = v_{i} - g \, t
+\end{align*}
+de donde conocemos que $v$ en el punto de la altura máxima vale $v = \SI{0}{\meter\per\second}$, entonces:
+\begin{align*}
+0 &= v_{i} - g \, t \\[0.5em]
+v_{i} &=  g \, t \\[0.5em]
+t &= \dfrac{v_{i}}{g} = \dfrac{\SI{30}{\meter\per\second}}{\SI{9.81}{\meter\per\square\second}} = \SI{3.05}{\second}
+\end{align*}
+\end{enumerate}
+
+\end{document}
